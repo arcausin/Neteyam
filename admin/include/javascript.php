@@ -14,7 +14,7 @@
 <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 <!-- Page level custom scripts -->
-<script src="/public/js/demo/chart-area-demo.js"></script>
-<script src="/public/js/demo/chart-bar-demo.js"></script>
-<script src="/public/js/demo/chart-pie-demo.js"></script>
-<script src="/public/js/demo/datatables-demo.js"></script>
+<script src="/vendor/chart.js/demo/chart-area-demo.js"></script>
+<script src="/vendor/chart.js/demo/chart-bar-demo.js"></script>
+<script src="/vendor/chart.js/demo/chart-pie-demo.js"></script>
+<script src="/vendor/chart.js/demo/datatables-demo.js"></script>

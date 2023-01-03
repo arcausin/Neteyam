@@ -21,7 +21,7 @@
                 </div>
                 <hr>
                 Styling for the area chart can be found in the
-                <code>/js/demo/chart-area-demo.js</code> file.
+                <code>/vendor/chart.js/demo/chart-area-demo.js</code> file.
             </div>
         </div>
 
@@ -36,7 +36,7 @@
                 </div>
                 <hr>
                 Styling for the bar chart can be found in the
-                <code>/js/demo/chart-bar-demo.js</code> file.
+                <code>/vendor/chart.js/demo/chart-bar-demo.js</code> file.
             </div>
         </div>
     </div>
@@ -55,7 +55,7 @@
                 </div>
                 <hr>
                 Styling for the donut chart can be found in the
-                <code>/js/demo/chart-pie-demo.js</code> file.
+                <code>/vendor/chart.js/demo/chart-pie-demo.js</code> file.
             </div>
         </div>
     </div>
