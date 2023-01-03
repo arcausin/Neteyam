@@ -1,0 +1,8 @@
+config/database.php
+config/apiKeys.php
+
+public/img/articles
+public/img/games
+public/img/developers
+public/img/publishers
+public/img/users
