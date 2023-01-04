@@ -1,5 +1,4 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/admin/security.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/admin/models/articles.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/admin/functions.php');
 
@@ -7,8 +6,8 @@ $categories = getCategories();
 
 if (isset($_POST['createArticleSubmit'])) {
     $articleTitle = validationInput($_POST['articleTitle']);
-    $articleSubtitle = validationInput($_POST['articleSubtitle']);
-    $articleContents = validationInput($_POST['articleContents']);
+    $articleSubtitle = validationContentsArticle($_POST['articleSubtitle']);
+    $articleContents = validationContentsArticle($_POST['articleContents']);
     $articleCategory = validationInput($_POST['articleCategory']);
     $articleCategory = getCategoryById($articleCategory);
 
