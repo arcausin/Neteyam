@@ -39,3 +39,15 @@ function creationDateLittleEndian($creation_date) {
 
   return $creation_date;
 }
+
+function PrintContentsArticle($data) {
+  return html_entity_decode($data, ENT_HTML5, 'UTF-8');
+}
+
+function printDescription($data) {
+  $data = strip_tags($data);
+  $data = substr($data, 0, 150);
+  $data = $data . '...';
+
+  return $data;
+}
