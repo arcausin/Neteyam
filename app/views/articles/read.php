@@ -1,5 +1,9 @@
 <?php $title = $article['title'] . " - Neteyam.com"; ?>
 
+<?php $description = printDescription(PrintContentsArticle($article['subtitle'])); ?>
+
+<?php $image = $urlNative . "/public/img/articles/" . $article['illustration']; ?>
+
 <?php ob_start(); ?>
 <div class="row">
   <div class="col-12 col-lg-8 mt-3">
@@ -18,8 +22,8 @@
           <p class="mb-0">PARTAGER</p>
         </div>
         <div>
-          <span><a href="#"><i class="bi bi-twitter fs-2 ms-2 text-white animate-opacity"></i></a></span>
-          <span><a href="#"><i class="bi bi-facebook fs-2 ms-2 text-white animate-opacity"></i></a></span>
+          <span><a href="https://twitter.com/share?url=<?= $urlNative . $_SERVER['REQUEST_URI']; ?>&text=<?= $article['title']; ?>" target="_blank"><i class="bi bi-twitter fs-2 ms-2 text-white animate-opacity"></i></a></span>
+          <span><a href="http://www.facebook.com/sharer.php?u=<?= $urlNative . $_SERVER['REQUEST_URI']; ?>&t=<?= $article['title']; ?>" target="_blank"><i class="bi bi-facebook fs-2 ms-2 text-white animate-opacity"></i></a></span>
         </div>
       </div>
     </div>
@@ -40,13 +44,13 @@
     <img class="img-fluid rounded mb-3" src="/public/img/articles/<?= $article['illustration']; ?>">
 
     <div class="fs-6 mb-3">
-      <?= htmlspecialchars_decode($article['subtitle']); ?>
+      <?= PrintContentsArticle($article['subtitle']); ?>
     </div>
 
     <hr>
 
     <div class="fs-6 mb-3">
-      <?= htmlspecialchars_decode($article['contents']); ?>
+      <?= PrintContentsArticle($article['contents']); ?>
     </div>
 
     <hr>
