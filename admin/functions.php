@@ -118,6 +118,5 @@ function validationContentsArticle($data) {
 }
 
 function PrintContentsArticle($data) {
-  html_entity_decode($data, ENT_HTML5, 'UTF-8');
-  return $data;
+  return html_entity_decode($data, ENT_HTML5, 'UTF-8');
 }
