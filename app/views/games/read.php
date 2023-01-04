@@ -1,5 +1,9 @@
 <?php $title = $game['title'] . " - Neteyam.com"; ?>
 
+<?php $description = "Retrouvez tous les contenus du jeu " . $game['title'] . " de Neteyam.com"; ?>
+
+<?php $image = $urlNative . "/public/img/games/" . $game['illustration']; ?>
+
 <?php ob_start(); ?>
 <div class="mt-3">
     <p class="mb-3"><a class="text-white animate-opacity" href="/">Acceuil</a> > <a class="text-white animate-opacity" href="/jeux/">Jeux</a> > <?= $game['title']; ?></p>

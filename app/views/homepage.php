@@ -1,8 +1,14 @@
 <?php $title = "Accueil - Neteyam.com"; ?>
 
+<?php $description = "Retrouvez tous les contenus de Neteyam.com"; ?>
+
+<?php $image = $urlNative . "/public/img/logo.png"; ?>
+
 <?php ob_start(); ?>
 <div class="row">
     <div class="col-12 col-lg-8 mt-3">
+        <h1 class="mb-3">Accueil</h1>
+
         <?php if ($lastNews) { ?>
             <div class="mb-3">
                 <a href="/actualites"><span class="badge text-bg-primary py-2 fs-2 animate-opacity">Actualités</span></a>

@@ -1,11 +1,15 @@
 <?php $title = "Tests - Neteyam.com"; ?>
 
+<?php $description = "Retrouvez tous les tests de Neteyam.com"; ?>
+
+<?php $image = $urlNative . "/public/img/logo.png"; ?>
+
 <?php ob_start(); ?>
 <div class="mt-3">
     <p class="mb-3"><a class="text-white animate-opacity" href="/">Acceuil</a> > Tests</p>
 
     <div class="mb-3">
-        <a href="/tests"><span class="badge text-bg-success py-2 fs-2 animate-opacity">Tests</span></a>
+        <a href="/tests"><span class="badge text-bg-success py-2 fs-2 animate-opacity"><h1 class="rajdhani fs-2 mb-0 fw-bold">Tests</h1></span></a>
     </div>
 
     <div class="row">

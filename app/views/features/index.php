@@ -1,11 +1,15 @@
 <?php $title = "Dossiers - Neteyam.com"; ?>
 
+<?php $description = "Retrouvez tous les dossiers de Neteyam.com"; ?>
+
+<?php $image = $urlNative . "/public/img/logo.png"; ?>
+
 <?php ob_start(); ?>
 <div class="mt-3">
     <p class="mb-3"><a class="text-white animate-opacity" href="/">Acceuil</a> > Dossiers</p>
 
     <div class="mb-3">
-        <a href="/dossiers"><span class="badge text-bg-warning py-2 fs-2 animate-opacity">Dossiers</span></a>
+        <a href="/dossiers"><span class="badge text-bg-warning py-2 fs-2 animate-opacity"><h1 class="rajdhani fs-2 mb-0 fw-bold">Dossiers</h1></span></a>
     </div>
 
     <div class="row">

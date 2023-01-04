@@ -1,10 +1,14 @@
 <?php $title = "Dossiers - " . $game['title'] . " - Neteyam.com"; ?>
 
+<?php $description = "Retrouvez tous les dossiers du jeu " . $game['title'] . " de Neteyam.com"; ?>
+
+<?php $image = $urlNative . "/public/img/games/" . $game['illustration']; ?>
+
 <?php ob_start(); ?>
 <div class="mt-3">
     <p class="mb-3"><a class="text-white animate-opacity" href="/">Acceuil</a> > <a class="text-white animate-opacity" href="/jeux/">Jeux</a> > <a class="text-white animate-opacity" href="/jeux/<?= $game['id_public']; ?>"><?= $game['title']; ?></a> > Dossiers</p>
 
-    <h1 class="text-center text-md-start fs-2 mb-3"><?= $game['title']; ?></h1>
+    <h1 class="text-center text-md-start fs-2 mb-3">Dossiers - <?= $game['title']; ?></h1>
 
     <div class="text-center text-md-start mb-3">
         <a href="/jeux/<?= $game['id_public']; ?>"><span class="badge text-bg-light py-2 fs-6 opacity-mid">Jeu</span></a>
@@ -24,8 +28,6 @@
             <a href="/jeux/<?= $game['id_public']; ?>/dossiers"><span class="badge text-bg-warning py-2 fs-6 animate-opacity">Dossiers</span></a>
         <?php endif ?>
     </div>
-
-    <h2 class="mb-3">Dossiers</h2>
 
     <div class="row">
         <?php

@@ -1,11 +1,15 @@
 <?php $title = "Actualités - Neteyam.com"; ?>
 
+<?php $description = "Retrouvez toutes les actualités de Neteyam.com"; ?>
+
+<?php $image = $urlNative . "/public/img/logo.png"; ?>
+
 <?php ob_start(); ?>
 <div class="mt-3">
     <p class="mb-3"><a class="text-white animate-opacity" href="/">Acceuil</a> > Actualités</p>
 
     <div class="mb-3">
-        <a href="/actualites"><span class="badge text-bg-primary py-2 fs-2 animate-opacity">Actualités</span></a>
+        <a href="/actualites"><span class="badge text-bg-primary py-2 fs-2 animate-opacity"><h1 class="rajdhani fs-2 mb-0 fw-bold">Actualités</h1></span></a>
     </div>
 
     <div class="row">

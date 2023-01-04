@@ -4,6 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Search Engine -->
+    <meta name="description" content="<?= $description; ?>">
+    <meta name="image" content="<?= $image; ?>">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="<?= $title; ?>">
+    <meta itemprop="description" content="<?= $description; ?>">
+    <meta itemprop="image" content="<?= $image; ?>">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="<?= $title; ?>">
+    <meta name="twitter:description" content="<?= $description; ?>">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="<?= $title; ?>">
+    <meta name="og:description" content="<?= $description; ?>">
+    <?php if (isset($article)) { ?> <meta name="og:image" content="<?= $article['illustration']; ?>"> <?php ; } ?>
+    <meta name="og:url" content="<?= $urlNative; ?>">
+    <meta name="og:site_name" content="Neteyam">
+    <meta name="og:locale" content="fr_FR">
+    <meta name="og:type" content="<?php if (isset($article)) { echo "article"; } else { echo "website"; } ?>">
+
+    <?php if (isset($article)) { ?>
+        <!-- Open Graph - Article -->
+        <meta name="article:section" content="<?= $categoryArticle['name']; ?>">
+        <meta name="article:published_time" content="<?= $article['creation_date']; ?>">
+        <meta name="article:author" content="<?= $author['pseudonym']; ?>">
+
+        <?php if (isset($article['update_date']) && $article['update_date'] != null) { ?>
+            <meta name="article:modified_time" content="<?= $article['update_date']; ?>">
+        <?php ; } ?>
+    <?php ; } ?>
+
+    <link rel="icon" type="image/png" href="/public/img/favicon.png">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
@@ -14,10 +47,18 @@
     <title><?= $title; ?></title>
     <style>
         h1, h2, h3, h4, h5, h6 {
-        font-family: 'Roboto Slab', serif;
+            font-family: 'Roboto Slab', serif;
+        }
+
+        .roboto-slab {
+            font-family: 'Roboto Slab', serif;
         }
 
         div, span, p, a {
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .rajdhani {
             font-family: 'Rajdhani', sans-serif;
         }
 
@@ -102,14 +143,14 @@
     <footer class="shadow-bottom">
         <div class="container">
             <div class="text-center py-3">
-                <p class="fs-4"><a class="text-decoration-none text-white animate-opacity" href="/">Neteyam.com</a></p>
-                <p><a class="text-white animate-opacity" href="/equipes">L'equipe</a> | <a class="text-white animate-opacity" href="/mentions-legales">Mentions Légales</a> | <a class="text-white animate-opacity" href="/politique-de-confidentialite">Politique de confidentialité</a> | <a class="text-white animate-opacity" href="/contact">Contact</a></p>
-        
-                <hr>
-
                 <p class="mb-3">NOUS SUIVRE</p>
                 <span><a href="#"><i class="bi bi-twitter fs-2 ms-2 text-white animate-opacity"></i></a></span>
                 <span><a href="#"><i class="bi bi-facebook fs-2 ms-2 text-white animate-opacity"></i></a></span>
+        
+                <hr>
+
+                <p><a class="text-white animate-opacity" href="/equipes">L'equipe</a> | <a class="text-white animate-opacity" href="/mentions-legales">Mentions Légales</a> | <a class="text-white animate-opacity" href="/politique-de-confidentialite">Politique de confidentialité</a> | <a class="text-white animate-opacity" href="/contact">Contact</a></p>
+                <p class="fs-4"><a class="text-decoration-none text-white animate-opacity" href="/">Neteyam.com</a></p>
             </div>
         </div>
     </footer>

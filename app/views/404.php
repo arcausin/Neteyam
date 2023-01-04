@@ -1,5 +1,9 @@
 <?php $title = "404 - Neteyam.com"; ?>
 
+<?php $description = "Il semble que vous ayez trouvé un bug dans la matrice..."; ?>
+
+<?php $image = $urlNative . "/public/img/logo.png"; ?>
+
 <?php ob_start(); ?>
 <div class="text-center mt-3 mb-3">
     <h1 class="fs-1 mb-3">404</h1>
