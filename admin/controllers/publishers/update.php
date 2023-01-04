@@ -61,7 +61,7 @@ if (countPublisher($publisherIdPublic)) {
 
     $publisher = getPublisher($publisherIdPublic);
 
-    require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/pages/entities/publishers/update.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/publishers/update.php');
 } else {
     header('Location: /administration/editeurs');
     exit();

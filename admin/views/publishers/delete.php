@@ -1,4 +1,4 @@
-<?php $title = "Supprimer l'éditeur " . $publisher['title'] . " - LeGameVideo.fr"; ?>
+<?php $title = "Supprimer l'éditeur " . $publisher['title'] . " - Neteyam.com"; ?>
 
 <?php ob_start(); ?>
 <div class="row">

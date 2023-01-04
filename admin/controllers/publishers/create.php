@@ -49,4 +49,4 @@ if (isset($_POST['createPublisherSubmit'])) {
     }
 }
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/pages/entities/publishers/create.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/publishers/create.php');

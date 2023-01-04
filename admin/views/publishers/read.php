@@ -1,4 +1,4 @@
-<?php $title = $publisher['title'] . " - LeGameVideo.fr"; ?>
+<?php $title = $publisher['title'] . " - Neteyam.com"; ?>
 
 <?php ob_start(); ?>
 <div class="row">

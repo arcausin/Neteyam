@@ -1,4 +1,4 @@
-<?php $title = "Ajouter un éditeur - LeGameVideo.fr"; ?>
+<?php $title = "Ajouter un éditeur - Neteyam.com"; ?>
 
 <?php ob_start(); ?>
 <div class="row">
@@ -21,7 +21,7 @@
 
         <h1 class="h3 mb-2 text-gray-800">Ajouter un éditeur</h1>
 
-        <p class="mb-2">Formulaire d'ajout de l'éditeur sur LeGameVideo.fr</p>
+        <p class="mb-2">Formulaire d'ajout de l'éditeur sur Neteyam.com</p>
 
         <form class="border p-4 mb-4" action="" method="post" enctype="multipart/form-data">
             <div class="form-group">

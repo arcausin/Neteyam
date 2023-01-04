@@ -18,7 +18,7 @@ if (countPublisher($publisherIdPublic)) {
         }
     }
 
-    require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/pages/entities/publishers/delete.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/publishers/delete.php');
 } else {
     header('Location: /administration/editeurs');
     exit();
