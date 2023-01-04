@@ -54,12 +54,12 @@
 
             <div class="form-group">
                 <label for="articleSubtitle">Sous-titre</label>
-                <textarea class="form-control" id="articleSubtitle" name="articleSubtitle" rows="2"><?php if (!empty($article['subtitle'])) : ?><?= $article['subtitle']; ?><?php endif ?></textarea>
+                <textarea class="form-control" id="articleSubtitle" name="articleSubtitle" rows="2"><?php if (!empty($article['subtitle'])) : ?><?= PrintContentsArticle($article['subtitle']); ?><?php endif ?></textarea>
             </div>
 
             <div class="form-group">
                 <label for="articleContents">Contenu</label>
-                <textarea class="form-control" id="articleContents" name="articleContents" rows="5"><?php if (!empty($article['contents'])) : ?><?= $article['contents']; ?><?php endif ?></textarea>
+                <textarea class="form-control" id="articleContents" name="articleContents" rows="5"><?php if (!empty($article['contents'])) : ?><?= PrintContentsArticle($article['contents']); ?><?php endif ?></textarea>
             </div>
 
             <button type="submit" class="btn btn-warning" name="updateArticleSubmit">Modifier</button>
