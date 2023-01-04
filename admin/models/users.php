@@ -208,7 +208,7 @@ function updateUserPassword($userId, $userPassword)
     );
 
     $statement->bindParam(':id', $userId, PDO::PARAM_INT);
-    $statement->bindParam(':mail_adress', $userPassword, PDO::PARAM_STR);
+    $statement->bindParam(':password', $userPassword, PDO::PARAM_STR);
 
     $statement->execute();
 
