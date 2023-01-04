@@ -13,12 +13,13 @@ if($_SERVER["HTTPS"] != "on")
     exit();
 }
 
-if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
-    $urlNative = "https://" . $_SERVER['HTTP_HOST'];
+$host = $_SERVER['HTTP_HOST'];
+
+if (strpos($host, 'www') === 0) {
+    $host = substr($host, 4);
 }
-else {
-    $urlNative = "http://" . $_SERVER['HTTP_HOST'];
-}
+
+$urlNative = "https://" . $host;
 
 if ($url[0] == 'administration') {
     if ($url[0] == 'administration' && empty($url[1])) {

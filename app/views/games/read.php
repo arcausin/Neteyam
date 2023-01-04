@@ -6,7 +6,7 @@
 
 <?php ob_start(); ?>
 <div class="mt-3">
-    <p class="mb-3"><a class="text-white animate-opacity" href="/">Acceuil</a> > <a class="text-white animate-opacity" href="/jeux/">Jeux</a> > <?= $game['title']; ?></p>
+    <p class="mb-3"><a class="text-white animate-opacity" href="/">Acceuil</a> > <a class="text-white animate-opacity" href="/jeux">Jeux</a> > <?= $game['title']; ?></p>
 
     <h1 class="text-center text-md-start fs-2 mb-3"><?= $game['title']; ?></h1>
             
