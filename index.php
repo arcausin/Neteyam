@@ -54,60 +54,60 @@ if ($url[0] == 'administration') {
     }
     
     elseif ($url[0] == 'administration' && $url[1] == 'jeux' && empty($url[2])) {
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/pages/entities/games/index.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/games/index.php');
     }
     elseif ($url[0] == 'administration' && $url[1] == 'jeux' && $url[2] == 'ajouter' && empty($url[3])) {
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/pages/entities/games/create.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/games/create.php');
     }
     elseif ($url[0] == 'administration' && $url[1] == 'jeux' && !empty($url[2]) && empty($url[3])) {
         $gameIdPublic = $url[2];
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/pages/entities/games/read.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/games/read.php');
     }
     elseif ($url[0] == 'administration' && $url[1] == 'jeux' && $url[2] == 'modifier' && !empty($url[3]) && empty($url[4])) {
         $gameIdPublic = $url[3];
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/pages/entities/games/update.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/games/update.php');
     }
     elseif ($url[0] == 'administration' && $url[1] == 'jeux' && $url[2] == 'supprimer' && !empty($url[3]) && empty($url[4])) {
         $gameIdPublic = $url[3];
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/pages/entities/games/delete.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/games/delete.php');
     }
     
     elseif ($url[0] == 'administration' && $url[1] == 'developpeurs' && empty($url[2])) {
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/pages/entities/developers/index.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/developers/index.php');
     }
     elseif ($url[0] == 'administration' && $url[1] == 'developpeurs' && $url[2] == 'ajouter' && empty($url[3])) {
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/pages/entities/developers/create.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/developers/create.php');
     }
     elseif ($url[0] == 'administration' && $url[1] == 'developpeurs' && !empty($url[2]) && empty($url[3])) {
         $developerIdPublic = $url[2];
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/pages/entities/developers/read.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/developers/read.php');
     }
     elseif ($url[0] == 'administration' && $url[1] == 'developpeurs' && $url[2] == 'modifier' && !empty($url[3]) && empty($url[4])) {
         $developerIdPublic = $url[3];
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/pages/entities/developers/update.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/developers/update.php');
     }
     elseif ($url[0] == 'administration' && $url[1] == 'developpeurs' && $url[2] == 'supprimer' && !empty($url[3]) && empty($url[4])) {
         $developerIdPublic = $url[3];
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/pages/entities/developers/delete.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/developers/delete.php');
     }
     
     elseif ($url[0] == 'administration' && $url[1] == 'editeurs' && empty($url[2])) {
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/pages/entities/publishers/index.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/publishers/index.php');
     }
     elseif ($url[0] == 'administration' && $url[1] == 'editeurs' && $url[2] == 'ajouter' && empty($url[3])) {
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/pages/entities/publishers/create.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/publishers/create.php');
     }
     elseif ($url[0] == 'administration' && $url[1] == 'editeurs' && !empty($url[2]) && empty($url[3])) {
         $publisherIdPublic = $url[2];
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/pages/entities/publishers/read.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/publishers/read.php');
     }
     elseif ($url[0] == 'administration' && $url[1] == 'editeurs' && $url[2] == 'modifier' && !empty($url[3]) && empty($url[4])) {
         $publisherIdPublic = $url[3];
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/pages/entities/publishers/update.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/publishers/update.php');
     }
     elseif ($url[0] == 'administration' && $url[1] == 'editeurs' && $url[2] == 'supprimer' && !empty($url[3]) && empty($url[4])) {
         $publisherIdPublic = $url[3];
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/pages/entities/publishers/delete.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/publishers/delete.php');
     }
     
     elseif ($url[0] == 'administration' && $url[1] == 'documentation' && $url[2] == 'components' && $url[3] == 'buttons') {

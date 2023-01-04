@@ -61,7 +61,7 @@ if (countGame($gameIdPublic)) {
 
     $game = getGame($gameIdPublic);
 
-    require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/pages/entities/games/update.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/games/update.php');
 } else {
     header('Location: /administration/jeux');
     exit();

@@ -1,4 +1,4 @@
-<?php $title = "Ajouter un jeu - LeGameVideo.fr"; ?>
+<?php $title = "Ajouter un jeu - Neteyam.com"; ?>
 
 <?php ob_start(); ?>
 <div class="row">

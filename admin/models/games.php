@@ -277,7 +277,7 @@ function deleteGame($gameId)
 
     $statement->bindParam(':id', $gameId, PDO::PARAM_INT);
 
-    $statement->execute([$gameId]);
+    $statement->execute();
 
     $database = null;
 

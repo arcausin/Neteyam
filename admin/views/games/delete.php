@@ -1,4 +1,4 @@
-<?php $title = "Supprimer le jeu " . $game['title'] . " - LeGameVideo.fr"; ?>
+<?php $title = "Supprimer le jeu " . $game['title'] . " - Neteyam.com"; ?>
 
 <?php ob_start(); ?>
 <div class="row">

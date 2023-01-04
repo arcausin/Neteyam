@@ -56,9 +56,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/config/apiKeys.php');
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"><i class="fas fa-newspaper"></i> Articles</h6>
-                        <a class="collapse-item" href="/administration/articles">Actualités</a>
-                        <a class="collapse-item" href="/administration/tests">Tests</a>
-                        <a class="collapse-item" href="/administration/guides">Guides</a>
+                        <a class="collapse-item" href="/administration/articles">Articles</a>
                         <h6 class="collapse-header"><i class="fas fa-gamepad"></i> Entités</h6>
                         <a class="collapse-item" href="/administration/jeux">Jeux</a>
                         <a class="collapse-item" href="/administration/developpeurs">Développeurs</a>

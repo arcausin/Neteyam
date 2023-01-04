@@ -49,4 +49,4 @@ if (isset($_POST['createGameSubmit'])) {
     }
 }
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/pages/entities/games/create.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/games/create.php');

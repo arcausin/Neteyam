@@ -18,7 +18,7 @@ if (countGame($gameIdPublic)) {
         }
     }
 
-    require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/pages/entities/games/delete.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/games/delete.php');
 } else {
     header('Location: /administration/jeux');
     exit();
