@@ -6,6 +6,13 @@ if (isset($_GET['url'])) {
     $url = explode('/', $_GET['url']);
 }
 
+if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+    $urlNative = "https://" . $_SERVER['HTTP_HOST'];
+}
+else {
+    $urlNative = "http://" . $_SERVER['HTTP_HOST'];
+}
+
 if ($url[0] == 'administration') {
     if ($url[0] == 'administration' && empty($url[1])) {
         require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/homepage.php');
