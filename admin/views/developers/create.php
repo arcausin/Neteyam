@@ -1,4 +1,4 @@
-<?php $title = "Ajouter un développeur - LeGameVideo.fr"; ?>
+<?php $title = "Ajouter un développeur - Neteyam.com"; ?>
 
 <?php ob_start(); ?>
 <div class="row">
@@ -21,7 +21,7 @@
 
         <h1 class="h3 mb-2 text-gray-800">Ajouter un développeur</h1>
 
-        <p class="mb-2">Formulaire d'ajout du développeur sur LeGameVideo.fr</p>
+        <p class="mb-2">Formulaire d'ajout du développeur sur Neteyam.com</p>
 
         <form class="border p-4 mb-4" action="" method="post" enctype="multipart/form-data">
             <div class="form-group">

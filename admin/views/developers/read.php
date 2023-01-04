@@ -1,4 +1,4 @@
-<?php $title = $developer['title'] . " - LeGameVideo.fr"; ?>
+<?php $title = $developer['title'] . " - Neteyam.com"; ?>
 
 <?php ob_start(); ?>
 <div class="row">

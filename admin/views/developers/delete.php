@@ -1,4 +1,4 @@
-<?php $title = "Supprimer le développeur " . $developer['title'] . " - LeGameVideo.fr"; ?>
+<?php $title = "Supprimer le développeur " . $developer['title'] . " - Neteyam.com"; ?>
 
 <?php ob_start(); ?>
 <div class="row">

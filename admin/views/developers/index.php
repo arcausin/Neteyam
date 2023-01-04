@@ -1,4 +1,4 @@
-<?php $title = "Développeurs - LeGameVideo.fr"; ?>
+<?php $title = "Développeurs - Neteyam.com"; ?>
 
 <?php ob_start(); ?>
 <div class="d-flex align-items-center justify-content-between mb-4">
@@ -8,7 +8,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Liste des développeurs référencés sur LeGameVideo.fr</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Liste des développeurs référencés sur Neteyam.com</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">

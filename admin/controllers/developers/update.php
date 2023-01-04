@@ -61,7 +61,7 @@ if (countDeveloper($developerIdPublic)) {
 
     $developer = getDeveloper($developerIdPublic);
 
-    require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/pages/entities/developers/update.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/developers/update.php');
 } else {
     header('Location: /administration/developpeurs');
     exit();

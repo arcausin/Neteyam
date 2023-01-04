@@ -49,4 +49,4 @@ if (isset($_POST['createDeveloperSubmit'])) {
     }
 }
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/pages/entities/developers/create.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/developers/create.php');

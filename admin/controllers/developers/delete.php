@@ -18,7 +18,7 @@ if (countDeveloper($developerIdPublic)) {
         }
     }
 
-    require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/pages/entities/developers/delete.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/developers/delete.php');
 } else {
     header('Location: /administration/developpeurs');
     exit();
