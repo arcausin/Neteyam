@@ -38,8 +38,13 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="userPseudonym" name="userPseudonym" placeholder="Pseudo">
                                 </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="userMailAdress" name="userMailAdress" placeholder="Adresse mail">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="email" class="form-control form-control-user" id="userMailAdress" name="userMailAdress" placeholder="Adresse mail">
+                                    </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="adminKey" name="adminKey" placeholder="Clé d'administration">
+                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">

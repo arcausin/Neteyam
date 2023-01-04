@@ -25,7 +25,7 @@ if (isset($_POST['resetPasswordUserSubmit'])) {
               if (empty($user['reset_token'])) {
                 $user['reset_token'] = makeIdPublic();
                 
-                if (!updateUserResetToken($user['id'], $user['reset_token'])) {
+                if (!updateUserResetPasswordToken($user['id'], $user['reset_token'])) {
                   $message = "generation du token echoué";
                   $mailSended = false;
                 }
@@ -41,7 +41,7 @@ if (isset($_POST['resetPasswordUserSubmit'])) {
                 <body>
                   <h1><?= $subject; ?></h1>
                   <p>Vous avez demandé à réinitialiser votre mot de passe sur le tableau de bord de LeGameVideo.fr, cliquez sur le lien ci-dessous pour le faire.</p>
-                  <a href="/administration/nouveau-mot-de-passe/<?= $user['reset_token']; ?>">Réinitialiser mon mot de passe</a>
+                  <a href="<?= $urlNative; ?>/administration/nouveau-mot-de-passe/<?= $user['reset_token']; ?>">Réinitialiser mon mot de passe</a>
                   <p>Si vous n'avez pas demandé à réinitialiser votre mot de passe, ignorez cet email.</p>
                 </body>
               </html>

@@ -10,12 +10,12 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/admin/models/users.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/admin/functions.php');
 
 if (!empty($userResetToken)) {
-    if (countUserResetToken($userResetToken) != 0) {
+    if (countUserResetPasswordToken($userResetToken) != 0) {
         // le token correspond a au moins un compte
-        if (countUserResetToken($userResetToken) == 1) {
+        if (countUserResetPasswordToken($userResetToken) == 1) {
             // le token correspond a un compte
-            if (getUserByResetToken($userResetToken)) {
-                $user = getUserByResetToken($userResetToken);
+            if (getUserByResetPasswordToken($userResetToken)) {
+                $user = getUserByResetPasswordToken($userResetToken);
                 if (isset($_POST['updatePasswordUserSubmit'])) {
                     $userPassword = validationInput($_POST['userPassword']);
                     $userPasswordConfirm = validationInput($_POST['userPasswordConfirm']);
@@ -32,7 +32,7 @@ if (!empty($userResetToken)) {
                     } else {
                         $userPasswordHash = password_hash($userPassword, PASSWORD_DEFAULT);
                         
-                        if (updateUserResetToken($user['id'], null)) {
+                        if (updateUserResetPasswordToken($user['id'], null)) {
                             if (updateUserPassword($user['id'], $userPasswordHash)) {
                                 $passwordUpdated = true;
                             } else {

@@ -12,6 +12,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/admin/functions.php');
 if (isset($_POST['createUserSubmit'])) {
     $userPseudonym = validationInput($_POST['userPseudonym']);
     $userMailAdress = validationInput($_POST['userMailAdress']);
+    $adminKey = validationInput($_POST['adminKey']);
     $userPassword = validationInput($_POST['userPassword']);
     $userPasswordConfirm = validationInput($_POST['userPasswordConfirm']);
 
@@ -26,6 +27,9 @@ if (isset($_POST['createUserSubmit'])) {
         $userCreated = false;
     } elseif (countUserMailAdress($userMailAdress) != 0) {
         $message = "Cette adresse mail est déjà utilisée";
+        $userCreated = false;
+    } elseif ($adminKey != "0991a0435133934ef217f867cc8a17b6") {
+        $message = "La clé d'administration est incorrecte";
         $userCreated = false;
     } elseif (empty($userPassword)) {
         $message = "Veuillez ajouter un mot de passe";
