@@ -30,7 +30,7 @@ if (isset($_POST['connectUserSubmit'])) {
                     $_SESSION['user'] = $user;
                     $userConnected = true;
                 } else {
-                    $message = "les deux mots de passe ne correspondent pas";
+                    $message = "le mot de passe est incorrect";
                     $userConnected = false;
                 }
             } else {
