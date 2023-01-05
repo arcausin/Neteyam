@@ -8,7 +8,7 @@ function getGames()
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM games ORDER BY title ASC"
+        "SELECT * FROM games ORDER BY release_date DESC"
     );
 
     $statement->execute();
