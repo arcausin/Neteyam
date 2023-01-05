@@ -41,7 +41,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/config/apiKeys.php');
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                LeGameVideo
+                <a class="text-white" href="/">Neteyam.com</a>
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->

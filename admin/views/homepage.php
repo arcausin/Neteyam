@@ -1,4 +1,4 @@
-<?php $title = "Tableau de bord - LeGameVideo.fr"; ?>
+<?php $title = "Tableau de bord - Neteyam.com"; ?>
 
 <?php ob_start(); ?>
 <div class="d-sm-flex align-items-center justify-content-between mb-4">

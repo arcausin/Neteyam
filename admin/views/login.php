@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Connexion - LeGameVideo.fr</title>
+    <title>Connexion - Neteyam.com</title>
 
     <?php require_once($_SERVER['DOCUMENT_ROOT'].'/admin/include/css.php'); ?>
 </head>

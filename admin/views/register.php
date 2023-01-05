@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Inscription - LeGameVideo.fr</title>
+    <title>Inscription - Neteyam.com</title>
 
     <?php require_once($_SERVER['DOCUMENT_ROOT'].'/admin/include/css.php'); ?>
 </head>

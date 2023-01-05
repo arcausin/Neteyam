@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Réinitialisation du mot de passe - LeGameVideo.fr</title>
+    <title>Réinitialisation du mot de passe - Neteyam.com</title>
 
     <?php require_once($_SERVER['DOCUMENT_ROOT'].'/admin/include/css.php'); ?>
 </head>

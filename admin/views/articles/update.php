@@ -1,4 +1,4 @@
-<?php $title = "Modifier l'article " . $article['title'] . " - LeGameVideo.fr"; ?>
+<?php $title = "Modifier l'article " . $article['title'] . " - Neteyam.com"; ?>
 
 <?php ob_start(); ?>
 <div class="row">

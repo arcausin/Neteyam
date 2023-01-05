@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Mot de passe oublié - LeGameVideo.fr</title>
+    <title>Mot de passe oublié - Neteyam.com</title>
 
     <?php require_once($_SERVER['DOCUMENT_ROOT'].'/admin/include/css.php'); ?>
 </head>

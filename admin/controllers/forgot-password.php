@@ -29,7 +29,7 @@ if (isset($_POST['resetPasswordUserSubmit'])) {
                 }
               }
 
-              $subject = "Lien de réinitialisation de mot de passe - LeGameVideo.fr";
+              $subject = "Lien de réinitialisation de mot de passe - Neteyam.com";
 
               ob_start(); ?>
               <html>
@@ -38,7 +38,7 @@ if (isset($_POST['resetPasswordUserSubmit'])) {
                 </head>
                 <body>
                   <h1><?= $subject; ?></h1>
-                  <p>Vous avez demandé à réinitialiser votre mot de passe sur le tableau de bord de LeGameVideo.fr, cliquez sur le lien ci-dessous pour le faire.</p>
+                  <p>Vous avez demandé à réinitialiser votre mot de passe sur le tableau de bord de Neteyam.com, cliquez sur le lien ci-dessous pour le faire.</p>
                   <a href="<?= $urlNative; ?>/administration/nouveau-mot-de-passe/<?= $user['reset_token']; ?>">Réinitialiser mon mot de passe</a>
                   <p>Si vous n'avez pas demandé à réinitialiser votre mot de passe, ignorez cet email.</p>
                 </body>
