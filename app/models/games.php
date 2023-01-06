@@ -25,7 +25,7 @@ function getLastGames($gameIdPublic, $limit)
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM games WHERE id_public != :id_public ORDER BY release_date DESC LIMIT :limit"
+        "SELECT * FROM games WHERE id_public != :id_public AND release_date < (NOW() + INTERVAL 30 DAY) ORDER BY release_date DESC LIMIT :limit"
     );
 
     $statement->bindParam(':id_public', $gameIdPublic, PDO::PARAM_STR);
