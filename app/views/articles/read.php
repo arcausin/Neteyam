@@ -11,7 +11,8 @@
 
     <div class="mb-3 d-flex justify-content-between align-items-center">
       <div>
-        <p class="mb-0">Par <a class="text-white animate-opacity" href="/utilisateurs/<?= $author['id_public']; ?>"><?= $author['pseudonym']; ?></a></p>
+        <!-- <p class="mb-0">Par <a class="text-white animate-opacity" href="/utilisateurs/<?= $author['id_public']; ?>"><?= $author['pseudonym']; ?></a></p> -->
+        <p class="mb-0">Par <?= $author['pseudonym']; ?></p>
         <p class="mb-0">Publié le <?= creationDateLittleEndian($article['creation_date']); ?></p>
         <?php if ($article['update_date'] && creationDateLittleEndian($article['update_date']) != creationDateLittleEndian($article['creation_date'])) : ?>
           <p class="mb-0">Mis à jour le <?= creationDateLittleEndian($article['update_date']); ?></p>
@@ -28,12 +29,12 @@
       </div>
     </div>
 
-    <div class="mb-3">
-      <a href="<?= $categoryArticle['link']; ?>"><span class="badge text-bg-<?= $categoryArticle['color']; ?> py-2 fs-6 animate-opacity"><?= $categoryArticle['name']; ?></span></a>
+    <div>
+      <a href="<?= $categoryArticle['link']; ?>"><span class="badge text-bg-<?= $categoryArticle['color']; ?> py-2 fs-6 mb-1 animate-opacity"><?= $categoryArticle['name']; ?></span></a>
       <?php
         foreach ($games as $game) {
         ?>
-        <a href="/jeux/<?= $game['id_public']; ?>"><span class="badge text-bg-light py-2 fs-6 animate-opacity"><?= $game['title']; ?></span></a>
+        <a href="/jeux/<?= $game['id_public']; ?>"><span class="badge text-bg-light py-2 fs-6 mb-1 animate-opacity"><?= $game['title']; ?></span></a>
         <?php
         }
       ?>
@@ -55,29 +56,30 @@
 
     <hr>
 
-    <div class="mb-3">
-      <a href="<?= $categoryArticle['link']; ?>"><span class="badge text-bg-<?= $categoryArticle['color']; ?> py-2 fs-6 animate-opacity"><?= $categoryArticle['name']; ?></span></a>
+    <div>
+      <a href="<?= $categoryArticle['link']; ?>"><span class="badge text-bg-<?= $categoryArticle['color']; ?> py-2 fs-6 mb-1 animate-opacity"><?= $categoryArticle['name']; ?></span></a>
       <?php
         foreach ($games as $game) {
         ?>
-        <a href="/jeux/<?= $game['id_public']; ?>"><span class="badge text-bg-light py-2 fs-6 animate-opacity"><?= $game['title']; ?></span></a>
+        <a href="/jeux/<?= $game['id_public']; ?>"><span class="badge text-bg-light py-2 fs-6 mb-1 animate-opacity"><?= $game['title']; ?></span></a>
         <?php
         }
       ?>
     </div>
 
     <div class="p-3 mb-3 shadow rounded">
-      <div class="d-flex align-items-center mb-3">
+      <div class="d-flex align-items-center">
         <img class="d-none d-md-inline-block img-fluid" width="100" src="/public/img/users/<?= $author['profile_picture']; ?>">
     
         <ul class="list-unstyled ms-0 ms-md-3 mb-0">
-          <li><b><a class="text-white fs-4 animate-opacity" href="/utilisateurs/<?= $author['id_public']; ?>"><?= $author['pseudonym']; ?></a></b></li>
+          <!-- <li><b><a class="text-white fs-4 animate-opacity" href="/utilisateurs/<?= $author['id_public']; ?>"><?= $author['pseudonym']; ?></a></b></li> -->
+          <li><b class="text-white fs-4"><?= $author['pseudonym']; ?></b></li>
           <li class="fs-6"><?= $author['biography']; ?></li>
         </ul>
       </div>
-      <div class="d-flex justify-content-end">
+      <!-- <div class="d-flex justify-content-end">
         <span><a href="#"><i class="bi bi-twitter fs-2 ms-2 text-white animate-opacity"></i></a></span>
-      </div>
+      </div> -->
     </div>
   </div>
   
@@ -97,12 +99,12 @@
             <img class="img-fluid rounded-top" src="/public/img/articles/<?= $lastArticle['illustration']; ?>">
 
             <div class="p-3">
-              <div class="mb-3">
-                <span class="badge text-bg-<?= $categoryLastArticle['color']; ?> py-2 fs-6"><?= $categoryLastArticle['name']; ?></span>
+              <div>
+                <span class="badge text-bg-<?= $categoryLastArticle['color']; ?> py-2 fs-6 mb-1"><?= $categoryLastArticle['name']; ?></span>
                 <?php
                   foreach ($gamesLastArticle as $gameLastArticle) {
                   ?>
-                  <span class="badge text-bg-light py-2 fs-6"><?= $gameLastArticle['title']; ?></span>
+                  <span class="badge text-bg-light py-2 fs-6 mb-1"><?= $gameLastArticle['title']; ?></span>
                   <?php
                   }
                 ?>
