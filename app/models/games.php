@@ -20,15 +20,33 @@ function getGames()
     return $games;
 }
 
-function getLastGames($gameIdPublic, $limit)
+function getLastGames($limit)
 {
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM games WHERE id_public != :id_public AND release_date < (NOW() + INTERVAL 30 DAY) ORDER BY release_date DESC LIMIT :limit"
+        "SELECT * FROM games WHERE release_date < NOW() ORDER BY release_date DESC LIMIT :limit"
     );
 
-    $statement->bindParam(':id_public', $gameIdPublic, PDO::PARAM_STR);
+    $statement->bindParam(':limit', $limit, PDO::PARAM_INT);
+
+    $statement->execute();
+
+    $games = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    $database = null;
+
+    return $games;
+}
+
+function getNextGames($limit)
+{
+    $database = dbConnect();
+
+    $statement = $database->prepare(
+        "SELECT * FROM games WHERE release_date > NOW() ORDER BY release_date ASC LIMIT :limit"
+    );
+
     $statement->bindParam(':limit', $limit, PDO::PARAM_INT);
 
     $statement->execute();

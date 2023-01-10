@@ -11,7 +11,7 @@
 
         <?php if ($lastNews) { ?>
             <div class="mb-3">
-                <a href="/actualites"><span class="badge text-bg-primary py-2 fs-2 animate-opacity">Actualités</span></a>
+                <a href="/actualites"><span class="badge text-bg-primary py-2 fs-2 animate-opacity"><h2 class="rajdhani fs-2 mb-0 fw-bold">Actualités</h2></span></a>
             </div>
 
             <div class="row g-3 mb-3">
@@ -33,7 +33,7 @@
 
         <?php if ($lastReviews) { ?>
             <div class="mb-3">
-                <a href="/tests"><span class="badge text-bg-success py-2 fs-2 animate-opacity">Tests</span></a>
+                <a href="/tests"><span class="badge text-bg-success py-2 fs-2 animate-opacity"><h2 class="rajdhani fs-2 mb-0 fw-bold">Tests</h2></span></a>
             </div>
 
             <div class="row g-3 mb-3">
@@ -55,7 +55,7 @@
 
         <?php if ($lastGuides) { ?>
             <div class="mb-3">
-                <a href="/guides"><span class="badge text-bg-danger py-2 fs-2 animate-opacity">Guides</span></a>
+                <a href="/guides"><span class="badge text-bg-danger py-2 fs-2 animate-opacity"><h2 class="rajdhani fs-2 mb-0 fw-bold">Guides</h2></span></a>
             </div>
 
             <div class="row g-3 mb-3">
@@ -77,7 +77,7 @@
 
         <?php if ($lastFeatures) { ?>
             <div class="mb-3">
-                <a href="/dossiers"><span class="badge text-bg-warning py-2 fs-2 animate-opacity">Dossiers</span></a>
+                <a href="/dossiers"><span class="badge text-bg-warning py-2 fs-2 animate-opacity"><h2 class="rajdhani fs-2 mb-0 fw-bold">Dossiers</h2></span></a>
             </div>
 
             <div class="row g-3 mb-3">
@@ -98,21 +98,27 @@
         <?php } ?>
     </div>
     <div class="col-12 col-lg-4 mt-3">
-        <?php if ($lastGames) { ?>
+        <?php if ($lastGames || $nextGames) { ?>
             <div class="mb-3">
-                <a href="/jeux"><span class="badge text-bg-light py-2 fs-2 animate-opacity">Jeux</span></a>
+                <a href="/jeux"><span class="badge text-bg-light py-2 fs-2 animate-opacity"><h2 class="rajdhani fs-2 mb-0 fw-bold">Jeux</h2></span></a>
             </div>
-            
+
             <div class="row g-3 mb-3">
-                <?php foreach ($lastGames as $lastGame) { ?>
+                <?php foreach (array_reverse($lastGames) as $lastGame) { ?>
                 <div class="col-6 col-md-3 col-lg-6">
                     <div class="shadow rounded">
                         <a class="text-decoration-none text-white animate-opacity" href="/jeux/<?= $lastGame['id_public']; ?>">
-                            <img class="img-fluid rounded-top" src="/public/img/games/<?= $lastGame['illustration']; ?>" alt="">
+                            <img class="img-fluid rounded" src="/public/img/games/<?= $lastGame['illustration']; ?>" alt="">
+                        </a>
+                    </div>
+                </div>
+                <?php } ?>
 
-                            <div class="p-2">
-                                <h3 class="fs-6 text-center shortcut-word"><?= $lastGame['title']; ?></h3>
-                            </div>
+                <?php foreach ($nextGames as $nextGame) { ?>
+                <div class="col-6 col-md-3 col-lg-6">
+                    <div class="shadow rounded">
+                        <a class="text-decoration-none text-white animate-opacity" href="/jeux/<?= $nextGame['id_public']; ?>">
+                            <img class="img-fluid rounded" src="/public/img/games/<?= $nextGame['illustration']; ?>" alt="">
                         </a>
                     </div>
                 </div>
