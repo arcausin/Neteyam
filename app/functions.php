@@ -40,6 +40,13 @@ function creationDateLittleEndian($creation_date) {
   return $creation_date;
 }
 
+function validationInput($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
+  return $data;
+}
+
 function PrintContentsArticle($data) {
   return html_entity_decode($data, ENT_HTML5, 'UTF-8');
 }

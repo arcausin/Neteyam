@@ -204,6 +204,10 @@ elseif (!empty($url[0])) {
         $articleIdPublic = $url[1];
         require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/articles/read.php');
     }
+
+    elseif ($url[0] == 'contact' && empty($url[1])) {
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/contact.php');
+    }
     
     else {
         require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/404.php');

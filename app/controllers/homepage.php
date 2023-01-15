@@ -1,5 +1,4 @@
 <?php
-
 require_once($_SERVER['DOCUMENT_ROOT'].'/app/models/games.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/app/models/articles.php');
 
