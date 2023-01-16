@@ -21,6 +21,19 @@
 
 <script>
     $(document).ready(function () {
-        $('#dataTable').DataTable();
+        $('#dataTable').DataTable({
+            "language": {
+                "info": "Affichage de _START_ à _END_ sur _TOTAL_ entrées",
+                "infoFiltered": "(filtré à partir de _MAX_ entrées au total)",
+                "lengthMenu": "Afficher _MENU_ entrées",
+                "search": "Rechercher :",
+                "paginate": {
+                    "first": "Premier",
+                    "last": "Dernier",
+                    "next": "Suivant",
+                    "previous": "Précédent"
+                },
+            },
+        });
     });
 </script>
