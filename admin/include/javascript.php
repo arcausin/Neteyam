@@ -18,3 +18,9 @@
 <script src="/vendor/chart.js/demo/chart-bar-demo.js"></script>
 <script src="/vendor/chart.js/demo/chart-pie-demo.js"></script>
 <script src="/vendor/chart.js/demo/datatables-demo.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#dataTable').DataTable();
+    });
+</script>
