@@ -77,6 +77,25 @@ function getGame($gameIdPublic)
     return $game;
 }
 
+function getGamesBySearch($search)
+{
+    $database = dbConnect();
+
+    $statement = $database->prepare(
+        "SELECT * FROM games WHERE LOWER(title) LIKE LOWER(:search) ORDER BY release_date DESC"
+    );
+
+    $statement->bindValue(':search', '%'.$search.'%', PDO::PARAM_STR);
+
+    $statement->execute();
+
+    $games = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    $database = null;
+
+    return $games;
+}
+
 function countGame($gameIdPublic)
 {
     $database = dbConnect();

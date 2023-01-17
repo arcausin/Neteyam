@@ -152,6 +152,10 @@ elseif (!empty($url[0])) {
     if ($url[0] == 'jeux' && empty($url[1])) {
         require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/games/index.php');
     }
+    elseif ($url[0] == 'jeux' && $url[1] == 'rechercher' && !empty($url[2]) && empty($url[3])) {
+        $search = $url[2];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/games/search.php');
+    }
     elseif ($url[0] == 'jeux' && !empty($url[1]) && empty($url[2])) {
         $gameIdPublic = $url[1];
         require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/games/read.php');
