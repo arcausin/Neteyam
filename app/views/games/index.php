@@ -7,7 +7,7 @@
 <?php ob_start(); ?>
 <script>
 function showGamesSearch(str) {
-    if (str.length == 0) {
+    if (str.length == 0 || str.trim() == "") {
         document.getElementById("allGames").style.display = "flex";
         document.getElementById("gamesSearch").innerHTML = "";
         return;
@@ -19,7 +19,7 @@ function showGamesSearch(str) {
                 document.getElementById("gamesSearch").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("POST", "/jeux/rechercher/" + str, true);
+        xmlhttp.open("GET", "/jeux/rechercher/" + str, true);
         xmlhttp.send();
     }
 }
