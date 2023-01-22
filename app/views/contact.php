@@ -28,25 +28,25 @@
 
     <div class="row">
         <div class="col-12 col-lg-6">
-            <form class="border rounded p-4 mb-3" action="" method="post">
+            <form class="p-3 mb-3 shadow rounded" action="" method="post">
                 <div class="form-group mb-3">
                     <label for="mailAdressContact">Adresse mail</label>
-                    <input type="email" class="form-control" id="mailAdressContact" name="mailAdressContact" maxlength="255" value="<?php if (!empty($mailAdressContact)) : ?><?= $mailAdressContact; ?><?php endif ?>" required>
+                    <input type="email" class="form-control shadow" id="mailAdressContact" name="mailAdressContact" maxlength="255" placeholder="Adresse mail" value="<?php if (!empty($mailAdressContact)) : ?><?= $mailAdressContact; ?><?php endif ?>" required>
                 </div>
 
                 <div class="form-group mb-3">
                     <label for="subjectContact">Sujet</label>
-                    <input type="text" class="form-control" id="subjectContact" name="subjectContact" maxlength="255" value="<?php if (!empty($subjectContact)) : ?><?= $subjectContact; ?><?php endif ?>" required>
+                    <input type="text" class="form-control shadow" id="subjectContact" name="subjectContact" maxlength="255" placeholder="Sujet" value="<?php if (!empty($subjectContact)) : ?><?= $subjectContact; ?><?php endif ?>" required>
                 </div>
 
                 <div class="form-group mb-3">
                     <label for="messageContact">Message</label>
-                    <textarea class="form-control" id="messageContact" name="messageContact" rows="5" required><?php if (!empty($messageContact)) : ?><?= $messageContact; ?><?php endif ?></textarea>
+                    <textarea class="form-control shadow" id="messageContact" name="messageContact" rows="5" placeholder="Message" required><?php if (!empty($messageContact)) : ?><?= $messageContact; ?><?php endif ?></textarea>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label class="mb-1" for="questionContact">Qui a formulé les trois lois de la robotique ?</label>
-                    <select class="custom-select mb-3" id="questionContact" name="questionContact" required>
+                    <select class="custom-select shadow" id="questionContact" name="questionContact" required>
                         <option selected value="0">Sélectionner une réponse</option>
                         <option value="1">James Cameron</option>
                         <option value="2">Isaac Asimov</option>
@@ -54,7 +54,7 @@
                     </select>
                 </div>
 
-                <button type="submit" class="btn btn-light" name="contactSubmit">Envoyer</button>
+                <button type="submit" class="btn btn-light shadow" name="contactSubmit">Envoyer</button>
             </form>
         </div>
     </div>

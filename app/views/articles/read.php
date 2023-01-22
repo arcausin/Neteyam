@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <div>
+    <div class="mb-3">
       <a href="<?= $categoryArticle['link']; ?>"><span class="badge text-bg-<?= $categoryArticle['color']; ?> py-2 fs-6 mb-1 animate-opacity"><?= $categoryArticle['name']; ?></span></a>
       <?php
         foreach ($games as $game) {
@@ -56,7 +56,7 @@
 
     <hr>
 
-    <div>
+    <div class="mb-3">
       <a href="<?= $categoryArticle['link']; ?>"><span class="badge text-bg-<?= $categoryArticle['color']; ?> py-2 fs-6 mb-1 animate-opacity"><?= $categoryArticle['name']; ?></span></a>
       <?php
         foreach ($games as $game) {

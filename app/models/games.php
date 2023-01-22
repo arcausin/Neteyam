@@ -89,11 +89,11 @@ function getGamesBySearch($search)
 
     $statement->execute();
 
-    $games = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $gamesSearch = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     $database = null;
 
-    return $games;
+    return $gamesSearch;
 }
 
 function countGame($gameIdPublic)
