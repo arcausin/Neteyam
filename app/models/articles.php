@@ -6,7 +6,7 @@ function getArticles()
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM articles ORDER BY creation_date DESC"
+        "SELECT * FROM articles WHERE validate = 1 AND visible = 1 ORDER BY creation_date DESC"
     );
 
     $statement->execute();
@@ -23,7 +23,7 @@ function getLastArticles($articleIdPublic, $limit)
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM articles WHERE id_public != :id_public ORDER BY creation_date DESC LIMIT :limit"
+        "SELECT * FROM articles WHERE validate = 1 AND visible = 1 AND id_public != :id_public ORDER BY creation_date DESC LIMIT :limit"
     );
 
     $statement->bindParam(':id_public', $articleIdPublic, PDO::PARAM_STR);
@@ -43,7 +43,7 @@ function getNews()
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM articles WHERE id_category = 1 ORDER BY creation_date DESC"
+        "SELECT * FROM articles WHERE id_category = 1 AND validate = 1 AND visible = 1 ORDER BY creation_date DESC"
     );
 
     $statement->execute();
@@ -60,7 +60,7 @@ function getLastNews($articleIdPublic, $limit)
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM articles WHERE id_category = 1 AND id_public != :id_public ORDER BY creation_date DESC LIMIT :limit"
+        "SELECT * FROM articles WHERE id_category = 1 AND validate = 1 AND visible = 1 AND id_public != :id_public ORDER BY creation_date DESC LIMIT :limit"
     );
 
     $statement->bindParam(':id_public', $articleIdPublic, PDO::PARAM_STR);
@@ -80,7 +80,7 @@ function getReviews()
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM articles WHERE id_category = 2 ORDER BY creation_date DESC"
+        "SELECT * FROM articles WHERE id_category = 2 AND validate = 1 AND visible = 1 ORDER BY creation_date DESC"
     );
 
     $statement->execute();
@@ -97,7 +97,7 @@ function getLastReviews($articleIdPublic, $limit)
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM articles WHERE id_category = 2 AND id_public != :id_public ORDER BY creation_date DESC LIMIT :limit"
+        "SELECT * FROM articles WHERE id_category = 2 AND validate = 1 AND visible = 1 AND id_public != :id_public ORDER BY creation_date DESC LIMIT :limit"
     );
 
     $statement->bindParam(':id_public', $articleIdPublic, PDO::PARAM_STR);
@@ -117,7 +117,7 @@ function getGuides()
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM articles WHERE id_category = 3 ORDER BY creation_date DESC"
+        "SELECT * FROM articles WHERE id_category = 3 AND validate = 1 AND visible = 1 ORDER BY creation_date DESC"
     );
 
     $statement->execute();
@@ -134,7 +134,7 @@ function getLastGuides($articleIdPublic, $limit)
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM articles WHERE id_category = 3 AND id_public != :id_public ORDER BY creation_date DESC LIMIT :limit"
+        "SELECT * FROM articles WHERE id_category = 3 AND validate = 1 AND visible = 1 AND id_public != :id_public ORDER BY creation_date DESC LIMIT :limit"
     );
 
     $statement->bindParam(':id_public', $articleIdPublic, PDO::PARAM_STR);
@@ -154,7 +154,7 @@ function getFeatures()
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM articles WHERE id_category = 4 ORDER BY creation_date DESC"
+        "SELECT * FROM articles WHERE id_category = 4 AND validate = 1 AND visible = 1 ORDER BY creation_date DESC"
     );
 
     $statement->execute();
@@ -171,7 +171,7 @@ function getLastFeatures($articleIdPublic, $limit)
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM articles WHERE id_category = 4 AND id_public != :id_public ORDER BY creation_date DESC LIMIT :limit"
+        "SELECT * FROM articles WHERE id_category = 4 AND validate = 1 AND visible = 1 AND id_public != :id_public ORDER BY creation_date DESC LIMIT :limit"
     );
 
     $statement->bindParam(':id_public', $articleIdPublic, PDO::PARAM_STR);
@@ -191,7 +191,7 @@ function getArticle($articleIdPublic)
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM articles WHERE id_public = :id_public"
+        "SELECT * FROM articles WHERE id_public = :id_public AND validate = 1 AND visible = 1"
     );
 
     $statement->bindParam(':id_public', $articleIdPublic, PDO::PARAM_STR);
@@ -274,7 +274,7 @@ function countArticle($articleIdPublic)
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT COUNT(id_public) FROM articles WHERE id_public = :id_public"
+        "SELECT COUNT(id_public) FROM articles WHERE id_public = :id_public AND validate = 1 AND visible = 1"
     );
 
     $statement->bindParam(':id_public', $articleIdPublic, PDO::PARAM_STR);
