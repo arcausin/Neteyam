@@ -15,14 +15,25 @@
             </div>
 
             <div class="row g-3 mb-3">
-                <?php foreach ($lastNews as $lastNew) { ?>
+                <?php foreach ($lastNews as $lastNew) {
+                    $gamesLastNew = getGamesByArticle($lastNew['id_public']);
+                ?>
                 <div class="col-12 col-md-6 col-lg-6">
                     <div class="shadow rounded">
                         <a class="text-decoration-none text-white animate-opacity" href="/actualites/<?= $lastNew['id_public']; ?>">
                             <img class="img-fluid rounded-top" src="/public/img/articles/<?= $lastNew['illustration']; ?>" alt="">
 
-                            <div class="p-2">
-                                <h3 class="fs-6"><?= $lastNew['title']; ?></h3>
+                            <div class="p-3">
+                                <div class="mb-1">
+                                    <?php
+                                    foreach ($gamesLastNew as $gameLastNew) {
+                                    ?>
+                                    <span class="badge text-bg-light py-2 fs-6 mb-1"><?= $gameLastNew['title']; ?></span>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                                <h3 class="fs-6 mb-0"><?= $lastNew['title']; ?></h3>
                             </div>
                         </a>
                     </div>
@@ -37,14 +48,25 @@
             </div>
 
             <div class="row g-3 mb-3">
-                <?php foreach ($lastReviews as $lastReview) { ?>
+                <?php foreach ($lastReviews as $lastReview) {
+                    $gamesLastReview = getGamesByArticle($lastReview['id_public']);
+                ?>
                 <div class="col-12 col-md-6 col-lg-6">
                     <div class="shadow rounded">
-                        <a class="text-decoration-none text-white animate-opacity" href="/actualites/<?= $lastReview['id_public']; ?>">
+                        <a class="text-decoration-none text-white animate-opacity" href="/tests/<?= $lastReview['id_public']; ?>">
                             <img class="img-fluid rounded-top" src="/public/img/articles/<?= $lastReview['illustration']; ?>" alt="">
 
-                            <div class="p-2">
-                                <h3 class="fs-6"><?= $lastReview['title']; ?></h3>
+                            <div class="p-3">
+                                <div class="mb-1">
+                                    <?php
+                                    foreach ($gamesLastReview as $gameLastReview) {
+                                    ?>
+                                    <span class="badge text-bg-light py-2 fs-6 mb-1"><?= $gameLastReview['title']; ?></span>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                                <h3 class="fs-6 mb-0"><?= $lastReview['title']; ?></h3>
                             </div>
                         </a>
                     </div>
@@ -59,14 +81,25 @@
             </div>
 
             <div class="row g-3 mb-3">
-                <?php foreach ($lastGuides as $lastGuide) { ?>
+                <?php foreach ($lastGuides as $lastGuide) {
+                    $gamesLastGuide = getGamesByArticle($lastGuide['id_public']);
+                ?>
                 <div class="col-12 col-md-6 col-lg-6">
                     <div class="shadow rounded">
-                        <a class="text-decoration-none text-white animate-opacity" href="/actualites/<?= $lastGuide['id_public']; ?>">
+                        <a class="text-decoration-none text-white animate-opacity" href="/guides/<?= $lastGuide['id_public']; ?>">
                             <img class="img-fluid rounded-top" src="/public/img/articles/<?= $lastGuide['illustration']; ?>" alt="">
 
-                            <div class="p-2">
-                                <h3 class="fs-6"><?= $lastGuide['title']; ?></h3>
+                            <div class="p-3">
+                                <div class="mb-1">
+                                    <?php
+                                    foreach ($gamesLastGuide as $gameLastGuide) {
+                                    ?>
+                                    <span class="badge text-bg-light py-2 fs-6 mb-1"><?= $gameLastGuide['title']; ?></span>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                                <h3 class="fs-6 mb-0"><?= $lastGuide['title']; ?></h3>
                             </div>
                         </a>
                     </div>
@@ -81,14 +114,25 @@
             </div>
 
             <div class="row g-3 mb-3">
-                <?php foreach ($lastFeatures as $lastFeature) { ?>
+                <?php foreach ($lastFeatures as $lastFeature) {
+                    $gamesLastFeature = getGamesByArticle($lastFeature['id_public']);
+                ?>
                 <div class="col-12 col-md-6 col-lg-6">
                     <div class="shadow rounded">
-                        <a class="text-decoration-none text-white animate-opacity" href="/actualites/<?= $lastFeature['id_public']; ?>">
+                        <a class="text-decoration-none text-white animate-opacity" href="/dossiers/<?= $lastFeature['id_public']; ?>">
                             <img class="img-fluid rounded-top" src="/public/img/articles/<?= $lastFeature['illustration']; ?>" alt="">
 
-                            <div class="p-2">
-                                <h3 class="fs-6"><?= $lastFeature['title']; ?></h3>
+                            <div class="p-3">
+                                <div class="mb-1">
+                                    <?php
+                                    foreach ($gamesLastFeature as $gameLastFeature) {
+                                    ?>
+                                    <span class="badge text-bg-light py-2 fs-6 mb-1"><?= $gameLastFeature['title']; ?></span>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                                <h3 class="fs-6 mb-0"><?= $lastFeature['title']; ?></h3>
                             </div>
                         </a>
                     </div>

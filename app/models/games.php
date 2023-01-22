@@ -1,5 +1,6 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/config/database.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/app/functions.php');
 
 // Games
 
@@ -85,7 +86,9 @@ function getGamesBySearch($search)
         "SELECT * FROM games WHERE LOWER(title) LIKE LOWER(:search) ORDER BY release_date DESC, title ASC"
     );
 
-    $statement->bindValue(':search', '%'.$search.'%', PDO::PARAM_STR);
+    $searchResult = validationInput($search);
+
+    $statement->bindValue(':search', '%'.$searchResult.'%', PDO::PARAM_STR);
 
     $statement->execute();
 

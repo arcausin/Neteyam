@@ -12,17 +12,27 @@
         <a href="/guides"><span class="badge text-bg-danger py-2 fs-2 animate-opacity"><h1 class="rajdhani fs-2 mb-0 fw-bold">Guides</h1></span></a>
     </div>
 
-    <div class="row">
+    <div class="row g-3">
     <?php
         foreach ($guides as $guide) {
+            $gamesGuide = getGamesByArticle($guide['id_public']);
         ?>
         <div class="col-12 col-md-6 col-lg-4 mb-3">
             <div class="shadow rounded">
                 <a class="text-decoration-none text-white animate-opacity" href="/guides/<?= $guide['id_public']; ?>">
                     <img class="img-fluid rounded-top" src="/public/img/articles/<?= $guide['illustration']; ?>" alt="">
 
-                    <div class="p-2">
-                        <h3 class="fs-6"><?= $guide['title']; ?></h3>
+                    <div class="p-3">
+                        <div class="mb-1">
+                            <?php
+                            foreach ($gamesGuide as $gameGuide) {
+                            ?>
+                            <span class="badge text-bg-light py-2 fs-6 mb-1"><?= $gameGuide['title']; ?></span>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                        <h3 class="fs-6 mb-0"><?= $guide['title']; ?></h3>
                     </div>
                 </a>
             </div>
