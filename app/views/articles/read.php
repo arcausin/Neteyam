@@ -40,17 +40,17 @@
       ?>
     </div>
 
-    <h1 class="fs-1 mb-3"><?= $article['title']; ?></h1>
+    <h1 class="mb-3"><?= $article['title']; ?></h1>
 
     <img class="img-fluid rounded mb-3" src="/public/img/articles/<?= $article['illustration']; ?>">
 
-    <div class="fs-6 mb-3">
+    <div class="fs-5 mb-3">
       <?= PrintContentsArticle($article['subtitle']); ?>
     </div>
 
     <hr>
 
-    <div class="fs-6 mb-3">
+    <div class="fs-5 mb-3">
       <?= PrintContentsArticle($article['contents']); ?>
     </div>
 
