@@ -67,11 +67,11 @@
 
         <img class="img-fluid rounded mb-4" src="/public/img/articles/<?= $article['illustration']; ?>">
 
-        <p class="mb-2"><?= PrintContentsArticle($article['subtitle']); ?></p>
+        <div class="mb-3"><?= PrintContentsArticle($article['subtitle']); ?></div>
 
         <hr>
 
-        <p class="mb-2"><?= PrintContentsArticle($article['contents']); ?></p>
+        <div class="mb-3"><?= PrintContentsArticle($article['contents']); ?></div>
     </div>
 </div>
 <?php $content = ob_get_clean(); ?>

@@ -44,15 +44,11 @@
 
     <img class="img-fluid rounded mb-3" src="/public/img/articles/<?= $article['illustration']; ?>">
 
-    <div class="fs-5 mb-3">
-      <?= PrintContentsArticle($article['subtitle']); ?>
-    </div>
+    <div class="fs-5 mb-3"><?= PrintContentsArticle($article['subtitle']); ?></div>
 
     <hr>
 
-    <div class="fs-5 mb-3">
-      <?= PrintContentsArticle($article['contents']); ?>
-    </div>
+    <div class="fs-5 mb-3"><?= PrintContentsArticle($article['contents']); ?></div>
 
     <hr>
 

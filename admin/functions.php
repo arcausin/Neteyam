@@ -112,7 +112,7 @@ function validationInput($data) {
 function validationContentsArticle($data) {
   $data = trim($data);
   $data = stripslashes($data);
-  $data = strip_tags($data, '<h1><h2><h3><h4><h5><h6><p><a><img><strong><em><i><u><b><s><ul><ol><li><blockquote><code><pre><hr><br><span><div>');
+  $data = strip_tags($data, '<h1><h2><h3><h4><h5><h6><p><a><img><strong><em><i><u><b><s><ul><ol><li><blockquote><code><pre><hr><br><span><div><iframe>');
   $data = htmlspecialchars($data, ENT_HTML5, 'UTF-8');
   return $data;
 }
