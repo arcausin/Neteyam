@@ -40,7 +40,7 @@
       ?>
     </div>
 
-    <h1 class="fs-2 mb-3"><?= $article['title']; ?></h1>
+    <h1 class="fs-1 mb-3"><?= $article['title']; ?></h1>
 
     <img class="img-fluid rounded mb-3" src="/public/img/articles/<?= $article['illustration']; ?>">
 
