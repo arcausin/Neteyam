@@ -5,11 +5,7 @@
     <div class="col-6 col-md-3 col-lg-2 mb-3">
         <div class="shadow rounded">
             <a class="text-decoration-none text-white animate-opacity" href="/jeux/<?= $gameSearch['id_public']; ?>">
-                <img class="img-fluid rounded-top" src="/public/img/games/<?= $gameSearch['illustration']; ?>" alt="">
-
-                <div class="p-2">
-                    <h3 class="fs-6 text-center shortcut-word"><?= $gameSearch['title']; ?></h3>
-                </div>
+                <img class="img-fluid rounded" src="/public/img/games/<?= $gameSearch['illustration']; ?>" alt="">
             </a>
         </div>
     </div>

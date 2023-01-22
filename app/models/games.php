@@ -8,7 +8,7 @@ function getGames()
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM games ORDER BY release_date DESC"
+        "SELECT * FROM games ORDER BY release_date DESC, title ASC"
     );
 
     $statement->execute();
@@ -25,7 +25,7 @@ function getLastGames($limit)
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM games WHERE release_date < NOW() ORDER BY release_date DESC LIMIT :limit"
+        "SELECT * FROM games WHERE release_date < NOW() ORDER BY release_date DESC, title ASC LIMIT :limit"
     );
 
     $statement->bindParam(':limit', $limit, PDO::PARAM_INT);
@@ -44,7 +44,7 @@ function getNextGames($limit)
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM games WHERE release_date > NOW() ORDER BY release_date ASC LIMIT :limit"
+        "SELECT * FROM games WHERE release_date > NOW() ORDER BY release_date ASC, title DESC LIMIT :limit"
     );
 
     $statement->bindParam(':limit', $limit, PDO::PARAM_INT);
@@ -82,7 +82,7 @@ function getGamesBySearch($search)
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM games WHERE LOWER(title) LIKE LOWER(:search) ORDER BY release_date DESC"
+        "SELECT * FROM games WHERE LOWER(title) LIKE LOWER(:search) ORDER BY release_date DESC, title ASC"
     );
 
     $statement->bindValue(':search', '%'.$search.'%', PDO::PARAM_STR);
