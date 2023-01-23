@@ -126,7 +126,7 @@ function getNewsByGame($gameIdPublic)
         "SELECT articles.* FROM articles
         INNER JOIN articles_games ON articles.id = articles_games.id_article
         INNER JOIN games ON articles_games.id_game = games.id
-        WHERE games.id_public = :id_public AND articles.id_category = 1 ORDER BY articles.creation_date DESC"
+        WHERE games.id_public = :id_public AND articles.id_category = 1 AND articles.validate = 1 AND articles.visible = 1 ORDER BY articles.creation_date DESC"
     );
 
     $statement->bindParam(':id_public', $gameIdPublic, PDO::PARAM_STR);
@@ -148,7 +148,7 @@ function countNewsByGame($gameIdPublic)
         "SELECT COUNT(articles.id) FROM articles
         INNER JOIN articles_games ON articles.id = articles_games.id_article
         INNER JOIN games ON articles_games.id_game = games.id
-        WHERE games.id_public = :id_public AND articles.id_category = 1"
+        WHERE games.id_public = :id_public AND articles.id_category = 1 AND articles.validate = 1 AND articles.visible = 1"
     );
 
     $statement->bindParam(':id_public', $gameIdPublic, PDO::PARAM_STR);
@@ -170,7 +170,7 @@ function getReviewsByGame($gameIdPublic)
         "SELECT articles.* FROM articles
         INNER JOIN articles_games ON articles.id = articles_games.id_article
         INNER JOIN games ON articles_games.id_game = games.id
-        WHERE games.id_public = :id_public AND articles.id_category = 2 ORDER BY articles.creation_date DESC"
+        WHERE games.id_public = :id_public AND articles.id_category = 2 AND articles.validate = 1 AND articles.visible = 1 ORDER BY articles.creation_date DESC"
     );
 
     $statement->bindParam(':id_public', $gameIdPublic, PDO::PARAM_STR);
@@ -192,7 +192,7 @@ function countReviewsByGame($gameIdPublic)
         "SELECT COUNT(articles.id) FROM articles
         INNER JOIN articles_games ON articles.id = articles_games.id_article
         INNER JOIN games ON articles_games.id_game = games.id
-        WHERE games.id_public = :id_public AND articles.id_category = 2"
+        WHERE games.id_public = :id_public AND articles.id_category = 2 AND articles.validate = 1 AND articles.visible = 1"
     );
 
     $statement->bindParam(':id_public', $gameIdPublic, PDO::PARAM_STR);
@@ -214,7 +214,7 @@ function getGuidesByGame($gameIdPublic)
         "SELECT articles.* FROM articles
         INNER JOIN articles_games ON articles.id = articles_games.id_article
         INNER JOIN games ON articles_games.id_game = games.id
-        WHERE games.id_public = :id_public AND articles.id_category = 3 ORDER BY articles.creation_date DESC"
+        WHERE games.id_public = :id_public AND articles.id_category = 3 AND articles.validate = 1 AND articles.visible = 1 ORDER BY articles.creation_date DESC"
     );
 
     $statement->bindParam(':id_public', $gameIdPublic, PDO::PARAM_STR);
@@ -236,7 +236,7 @@ function countGuidesByGame($gameIdPublic)
         "SELECT COUNT(articles.id) FROM articles
         INNER JOIN articles_games ON articles.id = articles_games.id_article
         INNER JOIN games ON articles_games.id_game = games.id
-        WHERE games.id_public = :id_public AND articles.id_category = 3"
+        WHERE games.id_public = :id_public AND articles.id_category = 3 AND articles.validate = 1 AND articles.visible = 1"
     );
 
     $statement->bindParam(':id_public', $gameIdPublic, PDO::PARAM_STR);
@@ -258,7 +258,7 @@ function getFeaturesByGame($gameIdPublic)
         "SELECT articles.* FROM articles
         INNER JOIN articles_games ON articles.id = articles_games.id_article
         INNER JOIN games ON articles_games.id_game = games.id
-        WHERE games.id_public = :id_public AND articles.id_category = 4 ORDER BY articles.creation_date DESC"
+        WHERE games.id_public = :id_public AND articles.id_category = 4 AND articles.validate = 1 AND articles.visible = 1 ORDER BY articles.creation_date DESC"
     );
 
     $statement->bindParam(':id_public', $gameIdPublic, PDO::PARAM_STR);
@@ -280,7 +280,7 @@ function countFeaturesByGame($gameIdPublic)
         "SELECT COUNT(articles.id) FROM articles
         INNER JOIN articles_games ON articles.id = articles_games.id_article
         INNER JOIN games ON articles_games.id_game = games.id
-        WHERE games.id_public = :id_public AND articles.id_category = 4"
+        WHERE games.id_public = :id_public AND articles.id_category = 4 AND articles.validate = 1 AND articles.visible = 1"
     );
 
     $statement->bindParam(':id_public', $gameIdPublic, PDO::PARAM_STR);
