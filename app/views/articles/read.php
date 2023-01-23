@@ -7,7 +7,7 @@
 <?php ob_start(); ?>
 <div class="row">
   <div class="col-12 col-lg-8 mt-3">
-    <p class="mb-3"><a class="text-white animate-opacity" href="/">Acceuil</a> > <a class="text-white animate-opacity" href="<?= $categoryArticle['link']; ?>/"><?= $categoryArticle['name']; ?></a> > <?= $article['title']; ?></p>
+    <p class="mb-3"><a class="text-white animate-opacity" href="/">Acceuil</a> > <a class="text-white animate-opacity" href="/<?= $categoryArticle['link']; ?>/"><?= $categoryArticle['name']; ?></a> > <?= $article['title']; ?></p>
 
     <div class="mb-3 d-flex justify-content-between align-items-center">
       <div>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="mb-3">
-      <a href="<?= $categoryArticle['link']; ?>"><span class="badge text-bg-<?= $categoryArticle['color']; ?> py-2 fs-6 mb-1 animate-opacity"><?= $categoryArticle['name']; ?></span></a>
+      <a href="/<?= $categoryArticle['link']; ?>"><span class="badge text-bg-<?= $categoryArticle['color']; ?> py-2 fs-6 mb-1 animate-opacity"><?= $categoryArticle['name']; ?></span></a>
       <?php
         foreach ($games as $game) {
         ?>
@@ -53,7 +53,7 @@
     <hr>
 
     <div class="mb-3">
-      <a href="<?= $categoryArticle['link']; ?>"><span class="badge text-bg-<?= $categoryArticle['color']; ?> py-2 fs-6 mb-1 animate-opacity"><?= $categoryArticle['name']; ?></span></a>
+      <a href="/<?= $categoryArticle['link']; ?>"><span class="badge text-bg-<?= $categoryArticle['color']; ?> py-2 fs-6 mb-1 animate-opacity"><?= $categoryArticle['name']; ?></span></a>
       <?php
         foreach ($games as $game) {
         ?>
@@ -91,7 +91,7 @@
       ?>
       <div class="col-12 col-md-6 col-lg-12 mb-3">
         <div class="shadow rounded">
-          <a class="text-decoration-none text-white animate-opacity" href="<?= $categoryLastArticle['link']; ?>/<?= $lastArticle['id_public']; ?>">
+          <a class="text-decoration-none text-white animate-opacity" href="/<?= $categoryLastArticle['link']; ?>/<?= $lastArticle['id_public']; ?>">
             <img class="img-fluid rounded-top" src="/public/img/articles/<?= $lastArticle['illustration']; ?>">
 
             <div class="p-3">
