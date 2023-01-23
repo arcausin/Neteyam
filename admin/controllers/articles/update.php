@@ -4,14 +4,31 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/admin/functions.php');
 
 if (countArticle($articleIdPublic)) {
     $article = getArticle($articleIdPublic);
-    $category = getCategoryByArticle($articleIdPublic);
+
+    $categoryArticle = getCategoryByArticle($articleIdPublic);
     $categories = getCategories();
+
+    $authorArticle = getAuthorByArticle($articleIdPublic);
+    $authors = getAuthors();
 
     if (isset($_POST['updateArticleSubmit'])) {
         $articleTitle = validationInput($_POST['articleTitle']);
         $articleSubtitle = validationContentsArticle($_POST['articleSubtitle']);
         $articleContents = validationContentsArticle($_POST['articleContents']);
         $articleCategory = validationInput($_POST['articleCategory']);
+        $articleAuthor = validationInput($_POST['articleAuthor']);
+        
+        if ($_POST['articleValidate'] == 'on') {
+            $articleValidate = 1;
+        } else {
+            $articleValidate = 0;
+        }
+
+        if ($_POST['articleVisible'] == 'on') {
+            $articleVisible = 1;
+        } else {
+            $articleVisible = 0;
+        }
 
         if (empty($articleTitle)) {
             $message = "Veuillez ajouter un titre à l'article";
@@ -24,6 +41,9 @@ if (countArticle($articleIdPublic)) {
             $articleUpdated = false;
         } elseif (empty($articleCategory)) {
             $message = "Veuillez ajouter une catégorie à l'article";
+            $articleUpdated = false;
+        } elseif (empty($articleAuthor)) {
+            $message = "Veuillez ajouter un auteur à l'article";
             $articleUpdated = false;
         } else {
             if ($_FILES['articleIllustration']['error'] != 4) {
@@ -38,7 +58,7 @@ if (countArticle($articleIdPublic)) {
                         $articleIllustration = makeIdPublic() . $extension;
                         move_uploaded_file($_FILES['articleIllustration']['tmp_name'], $folder . $articleIllustration);
             
-                        if (updateArticle($article['id'], $article['id_author'], $articleCategory, $articleTitle, $articleIllustration, $articleSubtitle, $articleContents, $article['validate'], $article['visible'])) {
+                        if (updateArticle($article['id'], $articleAuthor, $articleCategory, $articleTitle, $articleIllustration, $articleSubtitle, $articleContents, $articleValidate, $articleVisible)) {
                             unlink($_SERVER['DOCUMENT_ROOT']."/public/img/articles/".$article['illustration']);
                             $articleUpdated = true;
                             header('Location: /administration/articles');
@@ -53,7 +73,7 @@ if (countArticle($articleIdPublic)) {
                     $articleUpdated = false;
                 }
             } else {
-                if (updateArticle($article['id'], $article['id_author'], $articleCategory, $articleTitle, $article['illustration'], $articleSubtitle, $articleContents, $article['validate'], $article['visible'])) {
+                if (updateArticle($article['id'], $articleAuthor, $articleCategory, $articleTitle, $article['illustration'], $articleSubtitle, $articleContents, $articleValidate, $articleVisible)) {
                     $articleUpdated = true;
                     header('Location: /administration/articles');
                     exit();

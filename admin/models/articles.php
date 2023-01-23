@@ -205,6 +205,23 @@ function getAuthorByArticle($articleIdPublic)
     return $author;
 }
 
+function getAuthors()
+{
+    $database = dbConnect();
+
+    $statement = $database->prepare(
+        "SELECT * FROM users ORDER BY pseudonym ASC"
+    );
+
+    $statement->execute();
+
+    $authors = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    $database = null;
+
+    return $authors;
+}
+
 function countArticle($articleIdPublic)
 {
     $database = dbConnect();

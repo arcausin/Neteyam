@@ -25,16 +25,43 @@
             <div class="form-group">
                 <label for="articleCategory">Catégorie</label>
                 <select class="custom-select" id="articleCategory" name="articleCategory" required>
-                    <option selected value="<?= $article['id_category']; ?>"><?= $category['name']; ?></option>
-                    <?php foreach ($categories as $categorie) {
-                        if ($article['id_category'] != $categorie['id']) {
+                    <option selected value="<?= $article['id_category']; ?>"><?= $categoryArticle['name']; ?></option>
+                    <?php foreach ($categories as $category) {
+                        if ($article['id_category'] != $category['id']) {
                             ?>
-                            <option value="<?= $categorie['id']; ?>"><?= $categorie['name']; ?></option>
+                            <option value="<?= $category['id']; ?>"><?= $category['name']; ?></option>
                             <?php
                         }
                     }
                     ?>
                 </select>
+            </div>
+
+            <div class="form-group">
+                <label for="articleAuthor">Auteur</label>
+                <select class="custom-select" id="articleAuthor" name="articleAuthor" required>
+                    <option selected value="<?= $authorArticle['id']; ?>"><?= $authorArticle['pseudonym']; ?></option>
+                    <?php foreach ($authors as $author) {
+                        if ($article['id_author'] != $author['id']) {
+                            ?>
+                            <option value="<?= $author['id']; ?>"><?= $author['pseudonym']; ?></option>
+                            <?php
+                        }
+                    }
+                    ?>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <p class="mb-0">Publication de l'article :</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="articleValidate" name="articleValidate" <?php if ($article['validate'] == 1) { ?>checked<?php } ?>>
+                    <label class="form-check-label" for="articleValidate">Valider</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="articleVisible" name="articleVisible" <?php if ($article['visible'] == 1) { ?>checked<?php } ?>>
+                    <label class="form-check-label" for="articleVisible">Visible</label>
+                </div>
             </div>
 
             <div class="form-group">
