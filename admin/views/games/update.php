@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <div class="row">
-    <div class="col-12 col-lg-6">
+    <div class="col-12">
         <div class="mb-2">
             <a href="/administration/jeux">Retourner sur la liste des jeux</a>
         </div>
@@ -20,7 +20,9 @@
         <?php endif ?>
 
         <h1 class="h3 mb-2 text-gray-800">Modification du jeu <strong><?= $game['title']; ?></strong></h1>
+    </div>
 
+    <div class="col-12 col-lg-6">
         <form class="border p-4 mb-4" action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="gameTitle">Titre du jeu</label>
@@ -34,7 +36,7 @@
 
             <div class="form-group">
                 <p class="mb-2">illustration du jeu</p>
-                <img class="img-fluid rounded mb-2" src="/public/img/games/<?= $game['illustration']; ?>">
+                <img class="img-fluid rounded mb-2" src="/public/img/games/<?= $game['illustration']; ?>" width="50%">
                 <div class="custom-file">
                     <input type="hidden" name="MAX_FILE_SIZE" value="25000000"/>
                     <input type="file" class="custom-file-input" id="gameIllustration" name="gameIllustration">
@@ -50,6 +52,80 @@
             <button type="submit" class="btn btn-warning" name="updateGameSubmit">Modifier</button>
         </form>
     </div>
+    
+    <div class="col-12 col-lg-6">
+        <form class="border p-4 mb-4" action="" method="post">
+            <h2 class="h4 mb-3 text-gray-800">Consoles</h2>
+
+            <div class="mb-3">
+                <?php foreach ($consoles as $console) { ?>
+                    <?php
+                    if (countConsoleGame($game['id'], $console['id'])) {
+                        $checked = true;
+                    } else {
+                        $checked = false;
+                    }
+                    ?>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="console<?= $console['id']; ?>" name="consolesGame[]" value="<?= $console['id']; ?>" <?php if ($checked) : ?><?= "checked"; ?><?php endif ?>>
+                        <label class="form-check-label" for="console<?= $console['id']; ?>"><?= $console['name']; ?></label>
+                    </div>
+                <?php } ?>
+            </div>
+
+            <input type="hidden" id="unchecked_consoles" name="unchecked_consoles[]">
+
+            <button type="submit" class="btn btn-warning" name="updateConsolesGameSubmit">Modifier</button>
+        </form>
+
+        <form class="border p-4 mb-4" action="" method="post">
+            <h2 class="h4 mb-3 text-gray-800">Genres</h2>
+
+            <div class="mb-3">
+                <?php foreach ($genres as $genre) { ?>
+                    <?php
+                    if (countGenreGame($game['id'], $genre['id'])) {
+                        $checked = true;
+                    } else {
+                        $checked = false;
+                    }
+                    ?>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="genre<?= $genre['id']; ?>" name="genresGame[]" value="<?= $genre['id']; ?>" <?php if ($checked) : ?><?= "checked"; ?><?php endif ?>>
+                        <label class="form-check-label" for="genre<?= $genre['id']; ?>"><?= $genre['name']; ?></label>
+                    </div>
+                <?php } ?>
+            </div>
+
+            <input type="hidden" id="unchecked_genres" name="unchecked_genres[]">
+
+            <button type="submit" class="btn btn-warning" name="updateGenresGameSubmit">Modifier</button>
+        </form>
+
+        <form class="border p-4 mb-4" action="" method="post">
+            <h2 class="h4 mb-3 text-gray-800">Thèmes</h2>
+
+            <div class="mb-3">
+                <?php foreach ($themes as $theme) { ?>
+                    <?php
+                    if (countThemeGame($game['id'], $theme['id'])) {
+                        $checked = true;
+                    } else {
+                        $checked = false;
+                    }
+                    ?>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="theme<?= $theme['id']; ?>" name="themesGame[]" value="<?= $theme['id']; ?>" <?php if ($checked) : ?><?= "checked"; ?><?php endif ?>>
+                        <label class="form-check-label" for="theme<?= $theme['id']; ?>"><?= $theme['name']; ?></label>
+                    </div>
+                <?php } ?>
+            </div>
+
+            <input type="hidden" id="unchecked_themes" name="unchecked_themes[]">
+
+            <button type="submit" class="btn btn-warning" name="updateThemesGameSubmit">Modifier</button>
+        </form>
+    </div>
 </div>
 <script>
     document.querySelector('.custom-file-input').addEventListener('change',function(e){
@@ -57,6 +133,51 @@
         var nextSibling = e.target.nextElementSibling
         nextSibling.innerText = fileName
     })
+</script>
+
+<script>
+    var checkboxesConsoles = document.querySelectorAll('input[name="consolesGame[]"]');
+    var uncheckedConsoles = document.getElementById('unchecked_consoles');
+    for (var i = 0; i < checkboxesConsoles.length; i++) {
+        checkboxesConsoles[i].addEventListener('change', function(e) {
+            if(!e.target.checked) {
+                uncheckedConsoles.value += e.target.value + ',';
+            } else {
+                var newValue = uncheckedConsoles.value.replace(e.target.value + ',','');
+                uncheckedConsoles.value = newValue;
+            }
+        });
+    }
+</script>
+
+<script>
+    var checkboxesGenres = document.querySelectorAll('input[name="genresGame[]"]');
+    var uncheckedGenres = document.getElementById('unchecked_genres');
+    for (var i = 0; i < checkboxesGenres.length; i++) {
+        checkboxesGenres[i].addEventListener('change', function(e) {
+            if(!e.target.checked) {
+                uncheckedGenres.value += e.target.value + ',';
+            } else {
+                var newValue = uncheckedGenres.value.replace(e.target.value + ',','');
+                uncheckedGenres.value = newValue;
+            }
+        });
+    }
+</script>
+
+<script>
+    var checkboxesThemes = document.querySelectorAll('input[name="themesGame[]"]');
+    var uncheckedThemes = document.getElementById('unchecked_themes');
+    for (var i = 0; i < checkboxesThemes.length; i++) {
+        checkboxesThemes[i].addEventListener('change', function(e) {
+            if(!e.target.checked) {
+                uncheckedThemes.value += e.target.value + ',';
+            } else {
+                var newValue = uncheckedThemes.value.replace(e.target.value + ',','');
+                uncheckedThemes.value = newValue;
+            }
+        });
+    }
 </script>
 <?php $content = ob_get_clean(); ?>
 

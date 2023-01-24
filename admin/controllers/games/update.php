@@ -4,6 +4,117 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/admin/functions.php');
 
 if (countGame($gameIdPublic)) {
     $game = getGame($gameIdPublic);
+    $consoles = getConsoles();
+    $genres = getGenres();
+    $themes = getThemes();
+    
+    if (isset($_POST['updateConsolesGameSubmit'])) {
+        if (isset($_POST['consolesGame'])) {
+            $consolesGameId = $_POST['consolesGame'];
+            foreach ($consolesGameId as $consoleGameId) {
+                if (countConsoleGame($game['id'], $consoleGameId)) {
+                    $message = "La console est déjà liée au jeu";
+                    $consoleGameAdded = false;
+                } else {
+                    if (addConsoleGame($game['id'], $consoleGameId)) {
+                        $consoleGameAdded = true;
+                    } else {
+                        $message = "Inconnue";
+                        $consoleGameAdded = false;
+                    }
+                }
+            }
+        }
+
+        if(isset($_POST['unchecked_consoles'])) {
+            $uncheckedConsoles = explode(',', implode($_POST['unchecked_consoles']));
+            foreach($uncheckedConsoles as $uncheckedConsole) {
+                if (!countConsoleGame($game['id'], $uncheckedConsole)) {
+                    $message = "La console n'est pas liée au jeu";
+                    $consoleGameAdded = false;
+                } else {
+                    if(deleteConsoleGame($game['id'], $uncheckedConsole)){
+                        $consoleGameDeleted = true;
+                    }else{
+                        $message = "Inconnue";
+                        $consoleGameDeleted = false;
+                    }
+                }
+            }
+        }
+    }
+
+    if (isset($_POST['updateGenresGameSubmit'])) {
+        if (isset($_POST['genresGame'])) {
+            $genresGameId = $_POST['genresGame'];
+            foreach ($genresGameId as $genreGameId) {
+                if (countGenreGame($game['id'], $genreGameId)) {
+                    $message = "Le genre est déjà liée au jeu";
+                    $genreGameAdded = false;
+                } else {
+                    if (addGenreGame($game['id'], $genreGameId)) {
+                        $genreGameAdded = true;
+                    } else {
+                        $message = "Inconnue";
+                        $genreGameAdded = false;
+                    }
+                }
+            }
+        }
+
+        if(isset($_POST['unchecked_genres'])) {
+            $uncheckedGenres = explode(',', implode($_POST['unchecked_genres']));
+            foreach($uncheckedGenres as $uncheckedGenre) {
+                if (!countGenreGame($game['id'], $uncheckedGenre)) {
+                    $message = "Le genre n'est pas liée au jeu";
+                    $genreGameAdded = false;
+                } else {
+                    if(deleteGenreGame($game['id'], $uncheckedGenre)){
+                        $genreGameDeleted = true;
+                    }else{
+                        $message = "Inconnue";
+                        $genreGameDeleted = false;
+                    }
+                }
+            }
+        }
+    }
+
+    if (isset($_POST['updateThemesGameSubmit'])) {
+        if (isset($_POST['themesGame'])) {
+            $themesGameId = $_POST['themesGame'];
+            foreach ($themesGameId as $themeGameId) {
+                if (countThemeGame($game['id'], $themeGameId)) {
+                    $message = "Le thème est déjà liée au jeu";
+                    $themeGameAdded = false;
+                } else {
+                    if (addThemeGame($game['id'], $themeGameId)) {
+                        $themeGameAdded = true;
+                    } else {
+                        $message = "Inconnue";
+                        $themeGameAdded = false;
+                    }
+                }
+            }
+        }
+
+        if(isset($_POST['unchecked_themes'])) {
+            $uncheckedThemes = explode(',', implode($_POST['unchecked_themes']));
+            foreach($uncheckedThemes as $uncheckedTheme) {
+                if (!countThemeGame($game['id'], $uncheckedTheme)) {
+                    $message = "Le thème n'est pas liée au jeu";
+                    $themeGameAdded = false;
+                } else {
+                    if(deleteThemeGame($game['id'], $uncheckedTheme)){
+                        $themeGameDeleted = true;
+                    }else{
+                        $message = "Inconnue";
+                        $themeGameDeleted = false;
+                    }
+                }
+            }
+        }
+    }
 
     if (isset($_POST['updateGameSubmit'])) {
         $gameTitle = validationInput($_POST['gameTitle']);
