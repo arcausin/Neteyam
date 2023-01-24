@@ -2,8 +2,8 @@
 # create folder :
     public/img/articles
     public/img/games
-    public/img/developers
-    public/img/publishers
+    public/img/expansions
+    public/img/compagnies
     public/img/users
 
 # update files :

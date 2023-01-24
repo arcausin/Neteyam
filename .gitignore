@@ -3,6 +3,7 @@ config/apiKeys.php
 
 public/img/articles
 public/img/games
+public/img/expansions
 public/img/developers
 public/img/publishers
 public/img/users

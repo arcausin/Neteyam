@@ -12,6 +12,9 @@
 
     <div class="text-center text-md-start mb-3">
         <a href="/jeux/<?= $game['id_public']; ?>"><span class="badge text-bg-light py-2 fs-6 opacity-mid">Jeu</span></a>
+        <?php if ($numberExpansionsByGame != 0) : ?>
+            <a href="/jeux/<?= $game['id_public']; ?>/extensions"><span class="badge text-bg-secondary py-2 fs-6 opacity-mid">Extensions</span></a>
+        <?php endif ?>
         <?php if ($numberNewsByGame != 0) : ?>
             <a href="/jeux/<?= $game['id_public']; ?>/actualites"><span class="badge text-bg-primary py-2 fs-6 animate-opacity">Actualités</span></a>
         <?php endif ?>

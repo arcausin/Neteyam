@@ -3,9 +3,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/app/models/games.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/app/models/articles.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/app/functions.php');
 
-if (countGuidesByGame($gameIdPublic) != 0) {
+if (countExpansionsByGame($gameIdPublic) != 0) {
     $game = getGame($gameIdPublic);
-    $guides = getGuidesByGame($gameIdPublic);
+    $expansions = GetExpansionsByGame($gameIdPublic);
 
     $numberExpansionsByGame = countExpansionsByGame($gameIdPublic);
     $numberNewsByGame = countNewsByGame($gameIdPublic);
@@ -13,7 +13,7 @@ if (countGuidesByGame($gameIdPublic) != 0) {
     $numberGuidesByGame = countGuidesByGame($gameIdPublic);
     $numberFeaturesByGame = countFeaturesByGame($gameIdPublic);
 
-    require_once($_SERVER['DOCUMENT_ROOT'].'/app/views/games/guides.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/app/views/games/extensions.php');
 } else {
     header('Location: /jeux/' . $gameIdPublic);
     exit();

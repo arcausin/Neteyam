@@ -7,6 +7,7 @@ if (countReviewsByGame($gameIdPublic) != 0) {
     $game = getGame($gameIdPublic);
     $reviews = getReviewsByGame($gameIdPublic);
 
+    $numberExpansionsByGame = countExpansionsByGame($gameIdPublic);
     $numberNewsByGame = countNewsByGame($gameIdPublic);
     $numberReviewsByGame = countReviewsByGame($gameIdPublic);
     $numberGuidesByGame = countGuidesByGame($gameIdPublic);

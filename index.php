@@ -160,6 +160,10 @@ elseif (!empty($url[0])) {
         $gameIdPublic = $url[1];
         require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/games/read.php');
     }
+    elseif ($url[0] == 'jeux' && !empty($url[1]) && $url[2] == 'extensions' && empty($url[3])) {
+        $gameIdPublic = $url[1];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/games/extensions.php');
+    }
     elseif ($url[0] == 'jeux' && !empty($url[1]) && $url[2] == 'actualites' && empty($url[3])) {
         $gameIdPublic = $url[1];
         require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/games/news.php');
