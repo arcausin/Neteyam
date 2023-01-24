@@ -95,6 +95,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/config/apiKeys.php');
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Entités</h6>
                         <a class="collapse-item" href="/administration/entreprises">Entreprises</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header"><i class="fas fa-gamepad"></i> Liaisons</h6>
+                        <a class="collapse-item" href="/administration/developpeurs">Développement</a>
+                        <a class="collapse-item" href="/administration/editeurs">Éditions</a>
                     </div>
                 </div>
             </li>

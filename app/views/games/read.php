@@ -60,7 +60,7 @@
                 </div>
             <?php } ?>
 
-            <?php if (!empty($genresGame)) { ?>
+            <?php if (!empty($genresGame) || !empty($themesGame)) { ?>
                 <div class="text-center text-md-start mb-3">
                     <?php foreach ($genresGame as $genreGame) { ?>
                         <a href="/genres/<?= $genreGame['id_public']; ?>"><span class="badge text-bg-secondary py-2 fs-6 animate-opacity mb-1"><?= $genreGame['name']; ?></span></a>
