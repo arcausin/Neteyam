@@ -6,7 +6,7 @@ function getCompagnies()
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM Compagnies ORDER BY title ASC"
+        "SELECT * FROM compagnies ORDER BY title ASC"
     );
 
     $statement->execute();
@@ -23,7 +23,7 @@ function getCompany($companyIdPublic)
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM Compagnies WHERE id_public = :id_public"
+        "SELECT * FROM compagnies WHERE id_public = :id_public"
     );
 
     $statement->bindParam(':id_public', $companyIdPublic, PDO::PARAM_STR);
@@ -43,9 +43,9 @@ function getGamesByDeveloper($companyIdPublic)
 
     $statement = $database->prepare(
         "SELECT games.* FROM games
-        INNER JOIN games_Developers ON games.id = games_Developers.id_game
-        INNER JOIN Compagnies ON games_Developers.id_company = Compagnies.id
-        WHERE Compagnies.id_public = :id_public ORDER BY games.release_date DESC"
+        INNER JOIN games_developers ON games.id = games_developers.id_game
+        INNER JOIN compagnies ON games_developers.id_company = compagnies.id
+        WHERE compagnies.id_public = :id_public ORDER BY games.release_date DESC"
     );
 
     $statement->bindParam(':id_public', $companyIdPublic, PDO::PARAM_STR);
@@ -65,9 +65,9 @@ function getGamesByPublisher($companyIdPublic)
 
     $statement = $database->prepare(
         "SELECT games.* FROM games
-        INNER JOIN games_Publishers ON games.id = games_Publishers.id_game
-        INNER JOIN Compagnies ON games_Publishers.id_company = Compagnies.id
-        WHERE Compagnies.id_public = :id_public ORDER BY games.release_date DESC"
+        INNER JOIN games_publishers ON games.id = games_publishers.id_game
+        INNER JOIN compagnies ON games_publishers.id_company = compagnies.id
+        WHERE compagnies.id_public = :id_public ORDER BY games.release_date DESC"
     );
 
     $statement->bindParam(':id_public', $companyIdPublic, PDO::PARAM_STR);
@@ -86,7 +86,7 @@ function countCompany($companyIdPublic)
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT COUNT(id_public) FROM Compagnies WHERE id_public = :id_public"
+        "SELECT COUNT(id_public) FROM compagnies WHERE id_public = :id_public"
     );
 
     $statement->bindParam(':id_public', $companyIdPublic, PDO::PARAM_STR);
