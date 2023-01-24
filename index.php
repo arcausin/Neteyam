@@ -80,42 +80,23 @@ if ($url[0] == 'administration') {
         require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/games/delete.php');
     }
     
-    elseif ($url[0] == 'administration' && $url[1] == 'developpeurs' && empty($url[2])) {
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/developers/index.php');
+    elseif ($url[0] == 'administration' && $url[1] == 'entreprises' && empty($url[2])) {
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/compagnies/index.php');
     }
-    elseif ($url[0] == 'administration' && $url[1] == 'developpeurs' && $url[2] == 'ajouter' && empty($url[3])) {
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/developers/create.php');
+    elseif ($url[0] == 'administration' && $url[1] == 'entreprises' && $url[2] == 'ajouter' && empty($url[3])) {
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/compagnies/create.php');
     }
-    elseif ($url[0] == 'administration' && $url[1] == 'developpeurs' && !empty($url[2]) && empty($url[3])) {
-        $developerIdPublic = $url[2];
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/developers/read.php');
+    elseif ($url[0] == 'administration' && $url[1] == 'entreprises' && !empty($url[2]) && empty($url[3])) {
+        $companyIdPublic = $url[2];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/compagnies/read.php');
     }
-    elseif ($url[0] == 'administration' && $url[1] == 'developpeurs' && $url[2] == 'modifier' && !empty($url[3]) && empty($url[4])) {
-        $developerIdPublic = $url[3];
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/developers/update.php');
+    elseif ($url[0] == 'administration' && $url[1] == 'entreprises' && $url[2] == 'modifier' && !empty($url[3]) && empty($url[4])) {
+        $companyIdPublic = $url[3];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/compagnies/update.php');
     }
-    elseif ($url[0] == 'administration' && $url[1] == 'developpeurs' && $url[2] == 'supprimer' && !empty($url[3]) && empty($url[4])) {
-        $developerIdPublic = $url[3];
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/developers/delete.php');
-    }
-    
-    elseif ($url[0] == 'administration' && $url[1] == 'editeurs' && empty($url[2])) {
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/publishers/index.php');
-    }
-    elseif ($url[0] == 'administration' && $url[1] == 'editeurs' && $url[2] == 'ajouter' && empty($url[3])) {
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/publishers/create.php');
-    }
-    elseif ($url[0] == 'administration' && $url[1] == 'editeurs' && !empty($url[2]) && empty($url[3])) {
-        $publisherIdPublic = $url[2];
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/publishers/read.php');
-    }
-    elseif ($url[0] == 'administration' && $url[1] == 'editeurs' && $url[2] == 'modifier' && !empty($url[3]) && empty($url[4])) {
-        $publisherIdPublic = $url[3];
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/publishers/update.php');
-    }
-    elseif ($url[0] == 'administration' && $url[1] == 'editeurs' && $url[2] == 'supprimer' && !empty($url[3]) && empty($url[4])) {
-        $publisherIdPublic = $url[3];
-        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/publishers/delete.php');
+    elseif ($url[0] == 'administration' && $url[1] == 'entreprises' && $url[2] == 'supprimer' && !empty($url[3]) && empty($url[4])) {
+        $companyIdPublic = $url[3];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/compagnies/delete.php');
     }
     
     elseif ($url[0] == 'administration' && $url[1] == 'documentation' && $url[2] == 'components' && $url[3] == 'buttons') {

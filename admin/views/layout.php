@@ -48,18 +48,17 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/config/apiKeys.php');
             <li class="nav-item">
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne"
                     aria-expanded="true" aria-controls="collapseOne">
-                    <i class="fas fa-file"></i>
-                    <span>Pages</span>
+                    <i class="fas fa-newspaper"></i>
+                    <span>Articles</span>
                 </a>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"><i class="fas fa-newspaper"></i> Articles</h6>
                         <a class="collapse-item" href="/administration/articles">Articles</a>
-                        <h6 class="collapse-header"><i class="fas fa-gamepad"></i> Entités</h6>
-                        <a class="collapse-item" href="/administration/jeux">Jeux</a>
-                        <a class="collapse-item" href="/administration/developpeurs">Développeurs</a>
-                        <a class="collapse-item" href="/administration/editeurs">Editeurs</a>
                         <div class="collapse-divider"></div>
+                        <h6 class="collapse-header"><i class="fas fa-gamepad"></i> Liaisons</h6>
+                        <a class="collapse-item" href="/administration/categories">Catégories</a>
+                        <a class="collapse-item" href="/administration/tags">Tags</a>
                     </div>
                 </div>
             </li>
@@ -69,18 +68,51 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/config/apiKeys.php');
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-users"></i>
-                    <span>Utilisateurs</span>
+                    <span>Jeux</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Lorem:</h6>
-                        <a class="collapse-item" href="#">Ipsum</a>
-                        <a class="collapse-item" href="#">Ipsum</a>
+                        <h6 class="collapse-header">Entités</h6>
+                        <a class="collapse-item" href="/administration/jeux">Jeux</a>
+                        <a class="collapse-item" href="/administration/extensions">Extensions</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header"><i class="fas fa-gamepad"></i> Liaisons</h6>
+                        <a class="collapse-item" href="/administration/consoles">Consoles</a>
+                        <a class="collapse-item" href="/administration/genres">Genres</a>
+                        <a class="collapse-item" href="/administration/themes">Thèmes</a>
                     </div>
                 </div>
             </li>
 
-            
+            <!-- Nav Item - Utilisateurs Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="true" aria-controls="collapseThree">
+                    <i class="fas fa-building"></i>
+                    <span>Entreprises</span>
+                </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Entités</h6>
+                        <a class="collapse-item" href="/administration/entreprises">Entreprises</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilisateurs Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseFour"
+                    aria-expanded="true" aria-controls="collapseFour">
+                    <i class="fas fa-users"></i>
+                    <span>Utilisateurs</span>
+                </a>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Utilisateurs</h6>
+                        <a class="collapse-item" href="/administration/utilisateurs">Utilisateurs</a>
+                    </div>
+                </div>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
