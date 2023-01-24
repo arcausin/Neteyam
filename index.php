@@ -79,6 +79,25 @@ if ($url[0] == 'administration') {
         $gameIdPublic = $url[3];
         require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/games/delete.php');
     }
+
+    elseif ($url[0] == 'administration' && $url[1] == 'extensions' && empty($url[2])) {
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/expansions/index.php');
+    }
+    elseif ($url[0] == 'administration' && $url[1] == 'extensions' && $url[2] == 'ajouter' && empty($url[3])) {
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/expansions/create.php');
+    }
+    elseif ($url[0] == 'administration' && $url[1] == 'extensions' && !empty($url[2]) && empty($url[3])) {
+        $expansionIdPublic = $url[2];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/expansions/read.php');
+    }
+    elseif ($url[0] == 'administration' && $url[1] == 'extensions' && $url[2] == 'modifier' && !empty($url[3]) && empty($url[4])) {
+        $expansionIdPublic = $url[3];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/expansions/update.php');
+    }
+    elseif ($url[0] == 'administration' && $url[1] == 'extensions' && $url[2] == 'supprimer' && !empty($url[3]) && empty($url[4])) {
+        $expansionIdPublic = $url[3];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/expansions/delete.php');
+    }
     
     elseif ($url[0] == 'administration' && $url[1] == 'entreprises' && empty($url[2])) {
         require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/compagnies/index.php');
