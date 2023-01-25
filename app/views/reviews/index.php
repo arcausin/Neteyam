@@ -12,7 +12,7 @@
         <a href="/tests"><span class="badge text-bg-success py-2 fs-2 animate-opacity"><h1 class="rajdhani fs-2 mb-0 fw-bold">Tests</h1></span></a>
     </div>
 
-    <div class="row g-3">
+    <div class="row g-4">
     <?php
         foreach ($reviews as $review) {
             $gamesReview = getGamesByArticle($review['id_public']);

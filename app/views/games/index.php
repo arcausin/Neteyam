@@ -39,7 +39,7 @@ function showGamesSearch(str) {
 
     <div id="gamesSearch"></div>
 
-    <div class="row g-3 mb-3" id="allGames">
+    <div class="row g-4 mb-3" id="allGames">
         <?php
         foreach ($games as $game) {
         ?>

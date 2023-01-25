@@ -14,7 +14,7 @@
                 <a href="/actualites"><span class="badge text-bg-primary py-2 fs-2 animate-opacity"><h2 class="rajdhani fs-2 mb-0 fw-bold">Actualités</h2></span></a>
             </div>
 
-            <div class="row g-3 mb-3">
+            <div class="row g-4 mb-3">
                 <?php foreach ($lastNews as $lastNew) {
                     $gamesLastNew = getGamesByArticle($lastNew['id_public']);
                 ?>
@@ -47,7 +47,7 @@
                 <a href="/tests"><span class="badge text-bg-success py-2 fs-2 animate-opacity"><h2 class="rajdhani fs-2 mb-0 fw-bold">Tests</h2></span></a>
             </div>
 
-            <div class="row g-3 mb-3">
+            <div class="row g-4 mb-3">
                 <?php foreach ($lastReviews as $lastReview) {
                     $gamesLastReview = getGamesByArticle($lastReview['id_public']);
                 ?>
@@ -80,7 +80,7 @@
                 <a href="/guides"><span class="badge text-bg-danger py-2 fs-2 animate-opacity"><h2 class="rajdhani fs-2 mb-0 fw-bold">Guides</h2></span></a>
             </div>
 
-            <div class="row g-3 mb-3">
+            <div class="row g-4 mb-3">
                 <?php foreach ($lastGuides as $lastGuide) {
                     $gamesLastGuide = getGamesByArticle($lastGuide['id_public']);
                 ?>
@@ -113,7 +113,7 @@
                 <a href="/dossiers"><span class="badge text-bg-warning py-2 fs-2 animate-opacity"><h2 class="rajdhani fs-2 mb-0 fw-bold">Dossiers</h2></span></a>
             </div>
 
-            <div class="row g-3 mb-3">
+            <div class="row g-4 mb-3">
                 <?php foreach ($lastFeatures as $lastFeature) {
                     $gamesLastFeature = getGamesByArticle($lastFeature['id_public']);
                 ?>
@@ -147,7 +147,7 @@
                 <a href="/jeux"><span class="badge text-bg-light py-2 fs-2 animate-opacity"><h2 class="rajdhani fs-2 mb-0 fw-bold">Jeux</h2></span></a>
             </div>
 
-            <div class="row g-3 mb-3">
+            <div class="row g-4 mb-3">
                 <?php foreach (array_reverse($lastGames) as $lastGame) { ?>
                 <div class="col-6 col-md-3 col-lg-6">
                     <div class="shadow rounded">

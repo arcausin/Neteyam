@@ -12,7 +12,7 @@
         <a href="/guides"><span class="badge text-bg-danger py-2 fs-2 animate-opacity"><h1 class="rajdhani fs-2 mb-0 fw-bold">Guides</h1></span></a>
     </div>
 
-    <div class="row g-3">
+    <div class="row g-4">
     <?php
         foreach ($guides as $guide) {
             $gamesGuide = getGamesByArticle($guide['id_public']);
