@@ -39,11 +39,11 @@ function showGamesSearch(str) {
 
     <div id="gamesSearch"></div>
 
-    <div class="row" id="allGames">
+    <div class="row g-3 mb-3" id="allGames">
         <?php
         foreach ($games as $game) {
         ?>
-        <div class="col-6 col-md-3 col-lg-2 mb-3">
+        <div class="col-6 col-md-3 col-lg-2">
             <div class="shadow rounded">
                 <a class="text-decoration-none text-white animate-opacity" href="/jeux/<?= $game['id_public']; ?>">
                     <img class="img-fluid rounded" src="/public/img/games/<?= $game['illustration']; ?>" alt="">
