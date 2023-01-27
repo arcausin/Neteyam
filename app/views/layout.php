@@ -118,7 +118,7 @@
                 <div class="collapse navbar-collapse" id="navbarMenu">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a href="/" class="nav-link text-white animate-opacity">Accueil</a>
+                            <a href="/" class="nav-link text-white animate-opacity ps-0">Accueil</a>
                         </li>
                         <li class="nav-item">
                             <a href="/jeux" class="nav-link text-white animate-opacity">Jeux</a>

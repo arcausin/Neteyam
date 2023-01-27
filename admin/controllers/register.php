@@ -5,6 +5,7 @@ if (!empty($_SESSION['user'])) {
 }
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/admin/models/users.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/config/apiKeys.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/admin/functions.php');
 
 if (isset($_POST['createUserSubmit'])) {
@@ -26,7 +27,7 @@ if (isset($_POST['createUserSubmit'])) {
     } elseif (countUserMailAdress($userMailAdress) != 0) {
         $message = "Cette adresse mail est déjà utilisée";
         $userCreated = false;
-    } elseif ($adminKey != "0991a0435133934ef217f867cc8a17b6") {
+    } elseif ($adminKey != $keyRegister) {
         $message = "La clé d'administration est incorrecte";
         $userCreated = false;
     } elseif (empty($userPassword)) {
