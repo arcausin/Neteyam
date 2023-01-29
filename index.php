@@ -162,7 +162,7 @@ elseif (!empty($url[0])) {
     }
     elseif ($url[0] == 'jeux' && !empty($url[1]) && $url[2] == 'extensions' && empty($url[3])) {
         $gameIdPublic = $url[1];
-        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/games/extensions.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/games/expansions.php');
     }
     elseif ($url[0] == 'jeux' && !empty($url[1]) && $url[2] == 'actualites' && empty($url[3])) {
         $gameIdPublic = $url[1];
@@ -179,6 +179,26 @@ elseif (!empty($url[0])) {
     elseif ($url[0] == 'jeux' && !empty($url[1]) && $url[2] == 'dossiers' && empty($url[3])) {
         $gameIdPublic = $url[1];
         require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/games/features.php');
+    }
+
+    elseif ($url[0] == 'entreprises' && empty($url[1])) {
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/compagnies/index.php');
+    }
+    elseif ($url[0] == 'entreprises' && $url[1] == 'rechercher' && !empty($url[2]) && empty($url[3])) {
+        $search = $url[2];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/compagnies/search.php');
+    }
+    elseif ($url[0] == 'entreprises' && !empty($url[1]) && empty($url[2])) {
+        $companyIdPublic = $url[1];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/compagnies/read.php');
+    }
+    elseif ($url[0] == 'entreprises' && !empty($url[1]) && $url[2] == 'developpement' && empty($url[3])) {
+        $companyIdPublic = $url[1];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/compagnies/development.php');
+    }
+    elseif ($url[0] == 'entreprises' && !empty($url[1]) && $url[2] == 'edition' && empty($url[3])) {
+        $companyIdPublic = $url[1];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/compagnies/publishing.php');
     }
     
     elseif ($url[0] == 'actualites' && empty($url[1])) {
