@@ -1,6 +1,6 @@
 <?php $title = "Jeux - Neteyam.com"; ?>
 
-<?php $description = "Retrouvez tous les jeux de Neteyam.com"; ?>
+<?php $description = "Retrouvez tous les jeux référencés sur Neteyam.com"; ?>
 
 <?php $image = $urlNative . "/public/img/logo.png"; ?>
 
@@ -24,6 +24,7 @@ function showGamesSearch(str) {
     }
 }
 </script>
+
 <div class="mt-3">
     <p class="mb-3"><a class="text-white animate-opacity" href="/">Acceuil</a> > Jeux</p>
 

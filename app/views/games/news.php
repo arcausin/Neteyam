@@ -1,6 +1,6 @@
 <?php $title = "Actualités - " . $game['title'] . " - Neteyam.com"; ?>
 
-<?php $description = "Retrouvez toutes les actualités du jeu " . $game['title'] . " de Neteyam.com"; ?>
+<?php $description = "Retrouvez toutes les actualités du jeu " . $game['title'] . " référencées sur Neteyam.com"; ?>
 
 <?php $image = $urlNative . "/public/img/games/" . $game['illustration']; ?>
 
