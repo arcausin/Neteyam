@@ -1,6 +1,6 @@
 <?php $title = "Extensions - " . $game['title'] . " - Neteyam.com"; ?>
 
-<?php $description = "Retrouvez toutes les extensions du jeu " . $game['title'] . " de Neteyam.com"; ?>
+<?php $description = "Retrouvez toutes les extensions du jeu " . $game['title'] . " référencées sur Neteyam.com"; ?>
 
 <?php $image = $urlNative . "/public/img/expansions/" . $game['illustration']; ?>
 

@@ -13,7 +13,7 @@ if (countExpansionsByGame($gameIdPublic) != 0) {
     $numberGuidesByGame = countGuidesByGame($gameIdPublic);
     $numberFeaturesByGame = countFeaturesByGame($gameIdPublic);
 
-    require_once($_SERVER['DOCUMENT_ROOT'].'/app/views/games/extensions.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/app/views/games/expansions.php');
 } else {
     header('Location: /jeux/' . $gameIdPublic);
     exit();
