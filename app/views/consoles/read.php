@@ -19,7 +19,7 @@
 
     <div class="row mb-3">
         <div class="col-12 col-md-6 col-lg-3 text-center text-md-start">
-            <img class="img-fluid rounded mb-3" src="/public/img/games/<?= $console['illustration']; ?>">
+            <img class="img-fluid rounded mb-3" src="/public/img/consoles/<?= $console['illustration']; ?>">
         </div>
 
         <div class="col-12 col-md-6 col-lg-9">

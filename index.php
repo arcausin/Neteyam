@@ -98,6 +98,25 @@ if ($url[0] == 'administration') {
         $expansionIdPublic = $url[3];
         require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/expansions/delete.php');
     }
+
+    elseif ($url[0] == 'administration' && $url[1] == 'consoles' && empty($url[2])) {
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/consoles/index.php');
+    }
+    elseif ($url[0] == 'administration' && $url[1] == 'consoles' && $url[2] == 'ajouter' && empty($url[3])) {
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/consoles/create.php');
+    }
+    elseif ($url[0] == 'administration' && $url[1] == 'consoles' && !empty($url[2]) && empty($url[3])) {
+        $consoleIdPublic = $url[2];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/consoles/read.php');
+    }
+    elseif ($url[0] == 'administration' && $url[1] == 'consoles' && $url[2] == 'modifier' && !empty($url[3]) && empty($url[4])) {
+        $consoleIdPublic = $url[3];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/consoles/update.php');
+    }
+    elseif ($url[0] == 'administration' && $url[1] == 'consoles' && $url[2] == 'supprimer' && !empty($url[3]) && empty($url[4])) {
+        $consoleIdPublic = $url[3];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/consoles/delete.php');
+    }
     
     elseif ($url[0] == 'administration' && $url[1] == 'entreprises' && empty($url[2])) {
         require_once($_SERVER['DOCUMENT_ROOT'].'/admin/controllers/compagnies/index.php');
