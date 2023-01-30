@@ -12,18 +12,15 @@
         <a href="/consoles"><span class="badge text-bg-light py-2 fs-2 animate-opacity"><h1 class="rajdhani fs-2 mb-0 fw-bold">Consoles</h1></span></a>
     </div>
 
-    <div class="row g-4 mb-3">
+    <div class="row g-4 align-items-center mb-3">
         <?php
         foreach ($consoles as $console) {
         ?>
         <div class="col-6 col-md-3 col-lg-2">
-            <div class="shadow rounded">
+            <div class="shadow rounded p-3 bg-light">
                 <a class="text-decoration-none text-white animate-opacity" href="/consoles/<?= $console['id_public']; ?>">
-                    <!-- <img class="img-fluid rounded" src="/public/img/consoles/<?= $console['illustration']; ?>" alt=""> -->
+                    <img class="img-fluid rounded" src="/public/img/consoles/<?= $console['illustration']; ?>" alt="">
                 </a>
-            </div>
-            <div class="text-center">
-                <a href="/consoles/<?= $console['id_public']; ?>"><span class="badge text-bg-<?= $console['color']; ?> py-2 fs-6 animate-opacity mb-1"><?= $console['name']; ?></span></a>
             </div>
         </div>
         <?php
