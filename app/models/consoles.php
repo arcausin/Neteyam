@@ -6,7 +6,7 @@ function getConsoles()
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM consoles ORDER BY id ASC"
+        "SELECT * FROM consoles ORDER BY release_date DESC"
     );
 
     $statement->execute();
