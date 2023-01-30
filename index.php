@@ -201,6 +201,28 @@ elseif (!empty($url[0])) {
         require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/compagnies/publishing.php');
     }
     
+    elseif ($url[0] == 'consoles' && empty($url[1])) {
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/consoles/index.php');
+    }
+    elseif ($url[0] == 'consoles' && !empty($url[1]) && empty($url[2])) {
+        $consoleIdPublic = $url[1];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/consoles/read.php');
+    }
+    elseif ($url[0] == 'consoles' && !empty($url[1]) && $url[2] == 'jeux' && empty($url[3])) {
+        $consoleIdPublic = $url[1];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/consoles/games.php');
+    }
+
+    elseif ($url[0] == 'genres' && !empty($url[1]) && $url[2] == 'jeux' && empty($url[3])) {
+        $genreIdPublic = $url[1];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/genres/games.php');
+    }
+
+    elseif ($url[0] == 'themes' && !empty($url[1]) && $url[2] == 'jeux' && empty($url[3])) {
+        $genreIdPublic = $url[1];
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/themes/games.php');
+    }
+    
     elseif ($url[0] == 'actualites' && empty($url[1])) {
         require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/news/index.php');
     }
