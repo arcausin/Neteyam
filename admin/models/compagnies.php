@@ -129,7 +129,7 @@ function updateCompany($companyId, $companyTitle, $companyIllustration, $company
         "UPDATE compagnies SET title = :title, illustration = :illustration, description = :description, creation_date = :creation_date WHERE id = :id"
     );
 
-    $statement->bindParam(':id', $companyId, PDO::PARAM_STR);
+    $statement->bindParam(':id', $companyId, PDO::PARAM_INT);
     $statement->bindParam(':title', $companyTitle, PDO::PARAM_STR);
     $statement->bindParam(':illustration', $companyIllustration, PDO::PARAM_STR);
     $statement->bindParam(':description', $companyDescription, PDO::PARAM_STR);
