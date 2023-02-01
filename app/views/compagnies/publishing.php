@@ -20,7 +20,7 @@
         <?php endif ?>
     </div>
 
-    <div class="row g-4 mb-3">
+    <div class="row justify-content-center justify-content-md-start g-4 mb-3">
         <?php
         foreach ($gamesPublisher as $gamePublisher) {
         ?>
