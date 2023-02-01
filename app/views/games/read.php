@@ -63,11 +63,11 @@
             <?php if (!empty($genresGame) || !empty($themesGame)) { ?>
                 <div class="text-center text-md-start mb-3">
                     <?php foreach ($genresGame as $genreGame) { ?>
-                        <a href="/genres/<?= $genreGame['id_public']; ?>"><span class="badge text-bg-secondary py-2 fs-6 animate-opacity mb-1"><?= $genreGame['name']; ?></span></a>
+                        <a href="/genres/<?= $genreGame['id_public']; ?>/jeux"><span class="badge text-bg-secondary py-2 fs-6 animate-opacity mb-1"><?= $genreGame['name']; ?></span></a>
                     <?php } ?>
 
                     <?php foreach ($themesGame as $themeGame) { ?>
-                        <a href="/themes/<?= $themeGame['id_public']; ?>"><span class="badge text-bg-secondary py-2 fs-6 animate-opacity mb-1"><?= $themeGame['name']; ?></span></a>
+                        <a href="/themes/<?= $themeGame['id_public']; ?>/jeux"><span class="badge text-bg-secondary py-2 fs-6 animate-opacity mb-1"><?= $themeGame['name']; ?></span></a>
                     <?php } ?>
                 </div>
             <?php } ?>

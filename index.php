@@ -232,13 +232,19 @@ elseif (!empty($url[0])) {
         require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/consoles/games.php');
     }
 
+    elseif ($url[0] == 'genres' && empty($url[1])) {
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/genres/index.php');
+    }
     elseif ($url[0] == 'genres' && !empty($url[1]) && $url[2] == 'jeux' && empty($url[3])) {
         $genreIdPublic = $url[1];
         require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/genres/games.php');
     }
 
+    elseif ($url[0] == 'themes' && empty($url[1])) {
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/themes/index.php');
+    }
     elseif ($url[0] == 'themes' && !empty($url[1]) && $url[2] == 'jeux' && empty($url[3])) {
-        $genreIdPublic = $url[1];
+        $themeIdPublic = $url[1];
         require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/themes/games.php');
     }
     
