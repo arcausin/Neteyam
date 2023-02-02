@@ -1,9 +1,2 @@
 config/database.php
 config/apiKeys.php
-
-public/img/articles
-public/img/games
-public/img/expansions
-public/img/consoles
-public/img/compagnies
-public/img/users
