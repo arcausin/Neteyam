@@ -37,6 +37,86 @@ function getGame($gameIdPublic)
     return $game;
 }
 
+function getDevelopersByGame($gameIdPublic)
+{
+    $database = dbConnect();
+
+    $statement = $database->prepare(
+        "SELECT compagnies.* FROM compagnies
+        INNER JOIN games_developers ON compagnies.id = games_developers.id_company
+        INNER JOIN games ON games_developers.id_game = games.id
+        WHERE games.id_public = :id_public ORDER BY compagnies.title ASC"
+    );
+
+    $statement->bindParam(':id_public', $gameIdPublic, PDO::PARAM_STR);
+
+    $statement->execute();
+
+    $database = null;
+
+    $developers = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    return $developers;
+}
+
+function addDeveloperGame($gameId, $developerGameId)
+{
+    $database = dbConnect();
+
+    $statement = $database->prepare(
+        "INSERT INTO games_developers (id_game, id_company) VALUES (:id_game, :id_company)"
+    );
+
+    $statement->bindParam(':id_game', $gameId, PDO::PARAM_INT);
+    $statement->bindParam(':id_company', $developerGameId, PDO::PARAM_INT);
+
+    $statement->execute();
+
+    $database = null;
+
+    return $statement->rowCount();
+}
+
+function getPublishersByGame($gameIdPublic)
+{
+    $database = dbConnect();
+
+    $statement = $database->prepare(
+        "SELECT compagnies.* FROM compagnies
+        INNER JOIN games_publishers ON compagnies.id = games_publishers.id_company
+        INNER JOIN games ON games_publishers.id_game = games.id
+        WHERE games.id_public = :id_public ORDER BY compagnies.title ASC"
+    );
+
+    $statement->bindParam(':id_public', $gameIdPublic, PDO::PARAM_STR);
+
+    $statement->execute();
+
+    $database = null;
+
+    $publishers = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    return $publishers;
+}
+
+function addPublisherGame($gameId, $publisherGameId)
+{
+    $database = dbConnect();
+
+    $statement = $database->prepare(
+        "INSERT INTO games_publishers (id_game, id_company) VALUES (:id_game, :id_company)"
+    );
+
+    $statement->bindParam(':id_game', $gameId, PDO::PARAM_INT);
+    $statement->bindParam(':id_company', $publisherGameId, PDO::PARAM_INT);
+
+    $statement->execute();
+
+    $database = null;
+
+    return $statement->rowCount();
+}
+
 function countGame($gameIdPublic)
 {
     $database = dbConnect();

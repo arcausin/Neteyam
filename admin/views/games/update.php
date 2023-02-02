@@ -55,6 +55,84 @@
     
     <div class="col-12 col-lg-6">
         <form class="border p-4 mb-4" action="" method="post">
+            <h2 class="h4 mb-3 text-gray-800">Développement</h2>
+
+            <div class="form-group">
+                <select class="custom-select" id="developerGame" name="developerGame" required>
+                    <option selected value="0">Sélectionner une entreprise</option>
+                    <?php if (!empty($developersGame)) {
+                        foreach ($compagnies as $company) {
+                            foreach ($developersGame as $developerGame) {
+                                if (count($developersGame) != count($compagnies)) {
+                                    if ($company['id'] != $developerGame['id']) { ?>
+                                        <option value="<?= $company['id']; ?>"><?= $company['title']; ?></option> <?php
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        foreach ($compagnies as $company) { ?>
+                            <option value="<?= $company['id']; ?>"><?= $company['title']; ?></option> <?php
+                        }
+                    }
+                    ?>
+                </select>
+            </div>
+
+            <?php
+            if (!empty($developersGame)) { ?>
+                <div class="mb-3">
+                    <ul>
+                    <?php foreach ($developersGame as $developerGame) { ?>
+                        <li><?= $developerGame['title']; ?></li>
+                    <?php } ?>
+                    </ul>
+                </div>
+            <?php } ?>
+
+            <button type="submit" class="btn btn-warning" name="updateDevelopersGameSubmit">Modifier</button>
+        </form>
+
+        <form class="border p-4 mb-4" action="" method="post">
+            <h2 class="h4 mb-3 text-gray-800">Édition</h2>
+
+            <div class="form-group">
+                <select class="custom-select" id="publisherGame" name="publisherGame" required>
+                    <option selected value="0">Sélectionner une entreprise</option>
+                    <?php if (!empty($publishersGame)) {
+                        foreach ($compagnies as $company) {
+                            foreach ($publishersGame as $publisherGame) {
+                                if (count($publishersGame) != count($compagnies)) {
+                                    if ($company['id'] != $publisherGame['id']) { ?>
+                                        <option value="<?= $company['id']; ?>"><?= $company['title']; ?></option> <?php
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        foreach ($compagnies as $company) { ?>
+                            <option value="<?= $company['id']; ?>"><?= $company['title']; ?></option> <?php
+                        }
+                    }
+                    ?>
+                </select>
+            </div>
+
+            <?php
+            if (!empty($publishersGame)) { ?>
+                <div class="mb-3">
+                    <ul>
+                    <?php foreach ($publishersGame as $publisherGame) { ?>
+                        <li><?= $publisherGame['title']; ?></li>
+                    <?php } ?>
+                    </ul>
+                </div>
+            <?php } ?>
+
+            <button type="submit" class="btn btn-warning" name="updatePublishersGameSubmit">Modifier</button>
+        </form>
+
+        <form class="border p-4 mb-4" action="" method="post">
             <h2 class="h4 mb-3 text-gray-800">Consoles</h2>
 
             <div class="mb-3">

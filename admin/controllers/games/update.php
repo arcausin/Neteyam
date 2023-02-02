@@ -1,12 +1,45 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/admin/models/games.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/admin/models/compagnies.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/admin/functions.php');
 
 if (countGame($gameIdPublic)) {
     $game = getGame($gameIdPublic);
+
+    $developersGame = getDevelopersByGame($gameIdPublic);
+    $publishersGame = getPublishersByGame($gameIdPublic);
+
+    $compagnies = getCompagnies();
+
     $consoles = getConsoles();
     $genres = getGenres();
     $themes = getThemes();
+
+    if (isset($_POST['updateDevelopersGameSubmit'])) {
+        if (!empty($_POST['developerGame'])) {
+            $developerGame = $_POST['developerGame'];
+            if (addDeveloperGame($game['id'], $developerGame)) {
+                $developerGameAdded = true;
+            } else {
+                $message = "Inconnue";
+                $developerGameAdded = false;
+            }
+        }
+        $developersGame = getDevelopersByGame($gameIdPublic);
+    }
+
+    if (isset($_POST['updatePublishersGameSubmit'])) {
+        if (!empty($_POST['publisherGame'])) {
+            $publisherGame = $_POST['publisherGame'];
+            if (addPublisherGame($game['id'], $publisherGame)) {
+                $publisherGameAdded = true;
+            } else {
+                $message = "Inconnue";
+                $publisherGameAdded = false;
+            }
+        }
+        $publishersGame = getPublishersByGame($gameIdPublic);
+    }
     
     if (isset($_POST['updateConsolesGameSubmit'])) {
         if (isset($_POST['consolesGame'])) {
