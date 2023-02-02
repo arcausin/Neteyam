@@ -4,11 +4,18 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/admin/functions.php');
 
 if (isset($_POST['createGameSubmit'])) {
     $gameTitle = validationInput($_POST['gameTitle']);
+    $gameSlug = validationInput($_POST['gameSlug']);
     $gameDescription = validationInput($_POST['gameDescription']);
     $gameReleaseDate = validationInput($_POST['gameReleaseDate']);
 
     if (empty($gameTitle)) {
         $message = "Veuillez ajouter un titre au jeu";
+        $gameCreated = false;
+    } elseif (empty($gameSlug)) {
+        $message = "Veuillez ajouter un slug au jeu";
+        $gameCreated = false;
+    } elseif (countSlugGame($gameSlug) != 0) {
+        $message = "Le slug existe déjà";
         $gameCreated = false;
     } elseif (empty($gameDescription)) {
         $message = "Veuillez ajouter une description au jeu";
@@ -31,7 +38,7 @@ if (isset($_POST['createGameSubmit'])) {
                 $gameIllustration = makeIdPublic() . $extension;
                 move_uploaded_file($_FILES['gameIllustration']['tmp_name'], $folder . $gameIllustration);
 
-                $gameIdPublic = makeIdPublic();
+                $gameIdPublic = $gameSlug;
 
                 if (addGame($gameIdPublic, $gameTitle, $gameIllustration, $gameDescription, $gameReleaseDate)) {
                     $gameCreated = true;

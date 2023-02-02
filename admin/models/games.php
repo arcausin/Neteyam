@@ -134,6 +134,23 @@ function countGame($gameIdPublic)
     return $statement->fetchColumn();
 }
 
+function countSlugGame($gameSlug)
+{
+    $database = dbConnect();
+
+    $statement = $database->prepare(
+        "SELECT COUNT(id) FROM games WHERE id_public = :id_public"
+    );
+
+    $statement->bindParam(':id_public', $gameSlug, PDO::PARAM_STR);
+
+    $statement->execute();
+
+    $database = null;
+
+    return $statement->fetchColumn();
+}
+
 function getConsoles()
 {
     $database = dbConnect();
@@ -368,16 +385,17 @@ function addGame($gameIdPublic, $gameTitle, $gameIllustration, $gameDescription,
     return $statement->rowCount();
 }
 
-function updateGame($gameId, $gameTitle, $gameIllustration, $gameDescription, $gameReleaseDate)
+function updateGame($gameId, $gameIdPublic, $gameTitle, $gameIllustration, $gameDescription, $gameReleaseDate)
 {
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "UPDATE games SET title = :title, illustration = :illustration, description = :description, release_date = :release_date WHERE id = :id"
+        "UPDATE games SET title = :title, id_public = :id_public, illustration = :illustration, description = :description, release_date = :release_date WHERE id = :id"
     );
 
     $statement->bindParam(':id', $gameId, PDO::PARAM_INT);
     $statement->bindParam(':title', $gameTitle, PDO::PARAM_STR);
+    $statement->bindParam(':id_public', $gameIdPublic, PDO::PARAM_STR);
     $statement->bindParam(':illustration', $gameIllustration, PDO::PARAM_STR);
     $statement->bindParam(':description', $gameDescription, PDO::PARAM_STR);
     $statement->bindParam(':release_date', $gameReleaseDate, PDO::PARAM_STR);

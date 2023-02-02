@@ -21,7 +21,7 @@ function slugify($text, string $divider = '-')
   $text = strtolower($text);
 
   if (empty($text)) {
-    return 'n-a';
+    return makeIdPublic();
   }
 
   return $text;

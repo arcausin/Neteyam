@@ -30,6 +30,11 @@
             </div>
 
             <div class="form-group">
+                <label for="gameSlug">Slug</label>
+                <input type="text" class="form-control" id="gameSlug" name="gameSlug" maxlength="255" value="<?php if (!empty($game['id_public'])) : ?><?= $game['id_public']; ?><?php endif ?>" required>
+            </div>
+
+            <div class="form-group">
                 <label for="gameDescription">Description</label>
                 <textarea class="form-control" id="gameDescription" name="gameDescription" rows="5" required><?php if (!empty($game['description'])) : ?><?= $game['description']; ?><?php endif ?></textarea>
             </div>
@@ -211,6 +216,47 @@
         var nextSibling = e.target.nextElementSibling
         nextSibling.innerText = fileName
     })
+</script>
+
+<script>
+    function slugifyJS(text, divider = '-') {
+        // replace non letter or digits by divider
+        text = text.replace(/[^\w\d]+/g, divider);
+
+        // remove unwanted characters
+        text = text.replace(/[^-\w]+/g, '');
+
+        // trim
+        text = text.trim(divider);
+
+        // remove duplicate divider
+        text = text.replace(/--+/g, divider);
+
+        // lowercase
+        text = text.toLowerCase();
+
+        if (!text) {
+            return makeIdPublicJS();
+        }
+
+        return text;
+    }
+
+    function makeIdPublicJS() {
+        const crypto = window.crypto || window.msCrypto;
+        const array = new Uint8Array(16);
+        crypto.getRandomValues(array);
+        const idPublic = Array.from(array, dec => ('0' + dec.toString(16)).slice(-2)).join('');
+
+        return idPublic;
+    }
+
+  const titleInput = document.querySelector('#gameTitle');
+  const slugInput = document.querySelector('#gameSlug');
+
+  titleInput.addEventListener('input', function() {
+    slugInput.value = slugifyJS(titleInput.value);
+  });
 </script>
 
 <script>

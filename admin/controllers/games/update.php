@@ -151,11 +151,18 @@ if (countGame($gameIdPublic)) {
 
     if (isset($_POST['updateGameSubmit'])) {
         $gameTitle = validationInput($_POST['gameTitle']);
+        $gameSlug = validationInput($_POST['gameSlug']);
         $gameDescription = validationInput($_POST['gameDescription']);
         $gameReleaseDate = validationInput($_POST['gameReleaseDate']);
 
         if (empty($gameTitle)) {
             $message = "Veuillez ajouter un titre au jeu";
+            $gameUpdated = false;
+        } elseif (empty($gameSlug)) {
+            $message = "Veuillez ajouter un slug au jeu";
+            $gameUpdated = false;
+        } elseif (countSlugGame($gameSlug) != 0) {
+            $message = "Le slug existe déjà";
             $gameUpdated = false;
         } elseif (empty($gameDescription)) {
             $message = "Veuillez ajouter une description au jeu";
@@ -176,7 +183,7 @@ if (countGame($gameIdPublic)) {
                         $gameIllustration = makeIdPublic() . $extension;
                         move_uploaded_file($_FILES['gameIllustration']['tmp_name'], $folder . $gameIllustration);
             
-                        if (updateGame($game['id'], $gameTitle, $gameIllustration, $gameDescription, $gameReleaseDate)) {
+                        if (updateGame($game['id'], $gameSlug, $gameTitle, $gameIllustration, $gameDescription, $gameReleaseDate)) {
                             unlink($_SERVER['DOCUMENT_ROOT']."/public/img/games/".$game['illustration']);
                             $gameUpdated = true;
                             header('Location: /administration/jeux');
@@ -191,7 +198,7 @@ if (countGame($gameIdPublic)) {
                     $gameUpdated = false;
                 }
             } else {
-                if (updateGame($game['id'], $gameTitle, $game['illustration'], $gameDescription, $gameReleaseDate)) {
+                if (updateGame($game['id'], $gameSlug, $gameTitle, $game['illustration'], $gameDescription, $gameReleaseDate)) {
                     $gameUpdated = true;
                     header('Location: /administration/jeux');
                     exit();
