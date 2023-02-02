@@ -7,7 +7,7 @@ if (isset($_GET['url'])) {
     $url = explode('/', $_GET['url']);
 }
 
-if (array_key_exists("HTTPS", $_SERVER) && $_SERVER["HTTPS"] != "on") {
+if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] != "on") {
     header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
     exit();
 }
