@@ -151,7 +151,8 @@ if (countGame($gameIdPublic)) {
 
     if (isset($_POST['updateGameSubmit'])) {
         $gameTitle = validationInput($_POST['gameTitle']);
-        $gameSlug = validationInput($_POST['gameSlug']);
+        $gameSlug = slugify($_POST['gameSlug']);
+        $gameSlug = validationInput($gameSlug);
         $gameDescription = validationInput($_POST['gameDescription']);
         $gameReleaseDate = validationInput($_POST['gameReleaseDate']);
 
