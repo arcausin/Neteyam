@@ -6,6 +6,8 @@ $categories = getCategories();
 
 if (isset($_POST['createArticleSubmit'])) {
     $articleTitle = validationInput($_POST['articleTitle']);
+    $articleSlug = slugify($_POST['articleSlug']);
+    $articleSlug = validationInput($articleSlug);
     $articleSubtitle = validationContentsArticle($_POST['articleSubtitle']);
     $articleContents = validationContentsArticle($_POST['articleContents']);
     $articleCategory = validationInput($_POST['articleCategory']);
@@ -13,6 +15,12 @@ if (isset($_POST['createArticleSubmit'])) {
 
     if (empty($articleTitle)) {
         $message = "Veuillez ajouter un titre à l'article";
+        $articleCreated = false;
+    } elseif (empty($articleSlug)) {
+        $message = "Veuillez ajouter un slug à l'article";
+        $articleCreated = false;
+    } elseif (countArticle($articleSlug) != 0) {
+        $message = "Le slug existe déjà";
         $articleCreated = false;
     } elseif (empty($articleSubtitle)) {
         $message = "Veuillez ajouter un sous-titre à l'article";
@@ -38,7 +46,7 @@ if (isset($_POST['createArticleSubmit'])) {
                 $articleIllustration = makeIdPublic() . $extension;
                 move_uploaded_file($_FILES['articleIllustration']['tmp_name'], $folder . $articleIllustration);
 
-                $articleIdPublic = makeIdPublic();
+                $articleIdPublic = $articleSlug;
                 $authorId = $_SESSION['user']['id'];
 
                 if (addArticle($articleIdPublic, $authorId, $articleCategory['id'], $articleTitle, $articleIllustration, $articleSubtitle, $articleContents)) {

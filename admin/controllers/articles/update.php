@@ -13,18 +13,20 @@ if (countArticle($articleIdPublic)) {
 
     if (isset($_POST['updateArticleSubmit'])) {
         $articleTitle = validationInput($_POST['articleTitle']);
+        $articleSlug = slugify($_POST['articleSlug']);
+        $articleSlug = validationInput($articleSlug);
         $articleSubtitle = validationContentsArticle($_POST['articleSubtitle']);
         $articleContents = validationContentsArticle($_POST['articleContents']);
         $articleCategory = validationInput($_POST['articleCategory']);
         $articleAuthor = validationInput($_POST['articleAuthor']);
         
-        if ($_POST['articleValidate'] == 'on') {
+        if (isset($_POST['articleValidate']) && $_POST['articleValidate'] == 'on') {
             $articleValidate = 1;
         } else {
             $articleValidate = 0;
         }
 
-        if ($_POST['articleVisible'] == 'on') {
+        if (isset($_POST['articleVisible']) && $_POST['articleVisible'] == 'on') {
             $articleVisible = 1;
         } else {
             $articleVisible = 0;
@@ -33,6 +35,12 @@ if (countArticle($articleIdPublic)) {
         if (empty($articleTitle)) {
             $message = "Veuillez ajouter un titre à l'article";
             $articleUpdated = false;
+        } elseif (empty($articleSlug)) {
+            $message = "Veuillez ajouter un slug à l'article";
+            $articleCreated = false;
+        } elseif (countArticle($articleSlug, $article['id']) != 0) {
+            $message = "Le slug existe déjà";
+            $articleCreated = false;
         } elseif (empty($articleSubtitle)) {
             $message = "Veuillez ajouter un sous-titre à l'article";
             $articleUpdated = false;
@@ -58,7 +66,7 @@ if (countArticle($articleIdPublic)) {
                         $articleIllustration = makeIdPublic() . $extension;
                         move_uploaded_file($_FILES['articleIllustration']['tmp_name'], $folder . $articleIllustration);
             
-                        if (updateArticle($article['id'], $articleAuthor, $articleCategory, $articleTitle, $articleIllustration, $articleSubtitle, $articleContents, $articleValidate, $articleVisible)) {
+                        if (updateArticle($article['id'], $articleSlug, $articleAuthor, $articleCategory, $articleTitle, $articleIllustration, $articleSubtitle, $articleContents, $articleValidate, $articleVisible)) {
                             unlink($_SERVER['DOCUMENT_ROOT']."/public/img/articles/".$article['illustration']);
                             $articleUpdated = true;
                             header('Location: /administration/articles');
@@ -73,7 +81,7 @@ if (countArticle($articleIdPublic)) {
                     $articleUpdated = false;
                 }
             } else {
-                if (updateArticle($article['id'], $articleAuthor, $articleCategory, $articleTitle, $article['illustration'], $articleSubtitle, $articleContents, $articleValidate, $articleVisible)) {
+                if (updateArticle($article['id'], $articleSlug, $articleAuthor, $articleCategory, $articleTitle, $article['illustration'], $articleSubtitle, $articleContents, $articleValidate, $articleVisible)) {
                     $articleUpdated = true;
                     header('Location: /administration/articles');
                     exit();

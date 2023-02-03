@@ -45,6 +45,11 @@
             </div>
 
             <div class="form-group">
+                <label for="articleSlug">Slug</label>
+                <input type="text" class="form-control" id="articleSlug" name="articleSlug" maxlength="255" value="<?php if (!empty($articleSlug)) : ?><?= $articleSlug; ?><?php endif ?>" required>
+            </div>
+
+            <div class="form-group">
                 <p class="mb-2">illustration de l'article</p>
                 <div class="custom-file">
                     <input type="hidden" name="MAX_FILE_SIZE" value="25000000"/>
@@ -74,6 +79,7 @@
         nextSibling.innerText = fileName
     })
 </script>
+
 <script>
     tinymce.init({
     selector: '#articleSubtitle',
@@ -88,6 +94,47 @@
     plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
     toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
     });
+</script>
+
+<script>
+    function slugifyJS(text, divider = '-') {
+        // replace non letter or digits by divider
+        text = text.replace(/[^\w\d]+/g, divider);
+
+        // remove unwanted characters
+        text = text.replace(/[^-\w]+/g, '');
+
+        // trim
+        text = text.trim(divider);
+
+        // remove duplicate divider
+        text = text.replace(/--+/g, divider);
+
+        // lowercase
+        text = text.toLowerCase();
+
+        if (!text) {
+            return makeIdPublicJS();
+        }
+
+        return text;
+    }
+
+    function makeIdPublicJS() {
+        const crypto = window.crypto || window.msCrypto;
+        const array = new Uint8Array(16);
+        crypto.getRandomValues(array);
+        const idPublic = Array.from(array, dec => ('0' + dec.toString(16)).slice(-2)).join('');
+
+        return idPublic;
+    }
+
+  const titleInput = document.querySelector('#articleTitle');
+  const slugInput = document.querySelector('#articleSlug');
+
+  titleInput.addEventListener('input', function() {
+    slugInput.value = slugifyJS(titleInput.value);
+  });
 </script>
 <?php $content = ob_get_clean(); ?>
 

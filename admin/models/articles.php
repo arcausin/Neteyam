@@ -222,15 +222,16 @@ function getAuthors()
     return $authors;
 }
 
-function countArticle($articleIdPublic)
+function countArticle($articleIdPublic, $articleId = 0)
 {
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT COUNT(id_public) FROM articles WHERE id_public = :id_public"
+        "SELECT COUNT(id) FROM articles WHERE id_public = :id_public AND id != :id"
     );
 
     $statement->bindParam(':id_public', $articleIdPublic, PDO::PARAM_STR);
+    $statement->bindParam(':id', $articleId, PDO::PARAM_INT);
 
     $statement->execute();
 
@@ -264,18 +265,19 @@ function addArticle($articleIdPublic, $authorId, $categoryId, $articleTitle, $ar
     return $statement->rowCount();
 }
 
-function updateArticle($articleId, $authorId, $categoryId, $articleTitle, $articleIllustration, $articleSubtitle, $articleContents, $articleValidate, $articleVisible)
+function updateArticle($articleId, $articleIdPublic, $authorId, $categoryId, $articleTitle, $articleIllustration, $articleSubtitle, $articleContents, $articleValidate, $articleVisible)
 {
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "UPDATE articles SET id_author = :id_author, id_category = :id_category, title = :title, illustration = :illustration, subtitle = :subtitle, contents = :contents, validate = :validate, visible = :visible, update_date = NOW() WHERE id = :id"
+        "UPDATE articles SET id_author = :id_author, id_category = :id_category, title = :title, id_public = :id_public, illustration = :illustration, subtitle = :subtitle, contents = :contents, validate = :validate, visible = :visible, update_date = NOW() WHERE id = :id"
     );
 
     $statement->bindParam(':id', $articleId, PDO::PARAM_INT);
     $statement->bindParam(':id_author', $authorId, PDO::PARAM_INT);
     $statement->bindParam(':id_category', $categoryId, PDO::PARAM_INT);
     $statement->bindParam(':title', $articleTitle, PDO::PARAM_STR);
+    $statement->bindParam(':id_public', $articleIdPublic, PDO::PARAM_STR);
     $statement->bindParam(':illustration', $articleIllustration, PDO::PARAM_STR);
     $statement->bindParam(':subtitle', $articleSubtitle, PDO::PARAM_STR);
     $statement->bindParam(':contents', $articleContents, PDO::PARAM_STR);
