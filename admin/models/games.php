@@ -117,38 +117,24 @@ function addPublisherGame($gameId, $publisherGameId)
     return $statement->rowCount();
 }
 
-function countGame($gameIdPublic)
+function countGame($gameIdPublic, $gameId = 0)
 {
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT COUNT(id_public) FROM games WHERE id_public = :id_public"
+        "SELECT COUNT(id) FROM games WHERE id_public = :id_public AND id != :id"
     );
 
     $statement->bindParam(':id_public', $gameIdPublic, PDO::PARAM_STR);
+    $statement->bindParam(':id', $gameId, PDO::PARAM_INT);
 
     $statement->execute();
 
-    $database = null;
-
-    return $statement->fetchColumn();
-}
-
-function countSlugGame($gameSlug)
-{
-    $database = dbConnect();
-
-    $statement = $database->prepare(
-        "SELECT COUNT(id) FROM games WHERE id_public = :id_public"
-    );
-
-    $statement->bindParam(':id_public', $gameSlug, PDO::PARAM_STR);
-
-    $statement->execute();
+    $count = $statement->fetchColumn();
 
     $database = null;
 
-    return $statement->fetchColumn();
+    return $count;
 }
 
 function getConsoles()

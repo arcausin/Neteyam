@@ -161,7 +161,7 @@ if (countGame($gameIdPublic)) {
         } elseif (empty($gameSlug)) {
             $message = "Veuillez ajouter un slug au jeu";
             $gameUpdated = false;
-        } elseif (countSlugGame($gameSlug) != 0) {
+        } elseif (countGame($gameSlug, $game['id']) != 0) {
             $message = "Le slug existe déjà";
             $gameUpdated = false;
         } elseif (empty($gameDescription)) {

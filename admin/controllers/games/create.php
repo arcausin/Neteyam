@@ -14,7 +14,7 @@ if (isset($_POST['createGameSubmit'])) {
     } elseif (empty($gameSlug)) {
         $message = "Veuillez ajouter un slug au jeu";
         $gameCreated = false;
-    } elseif (countSlugGame($gameSlug) != 0) {
+    } elseif (countGame($gameSlug) != 0) {
         $message = "Le slug existe déjà";
         $gameCreated = false;
     } elseif (empty($gameDescription)) {
