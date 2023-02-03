@@ -81,15 +81,16 @@ function getGamesByPublisher($companyIdPublic)
     return $gamesPublisher;
 }
 
-function countCompany($companyIdPublic)
+function countCompany($companyIdPublic, $companyId = 0)
 {
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT COUNT(id_public) FROM compagnies WHERE id_public = :id_public"
+        "SELECT COUNT(id) FROM compagnies WHERE id_public = :id_public AND id != :id"
     );
 
     $statement->bindParam(':id_public', $companyIdPublic, PDO::PARAM_STR);
+    $statement->bindParam(':id', $companyId, PDO::PARAM_INT);
 
     $statement->execute();
 
@@ -121,16 +122,17 @@ function addCompany($companyIdPublic, $companyTitle, $companyIllustration, $comp
     return $statement->rowCount();
 }
 
-function updateCompany($companyId, $companyTitle, $companyIllustration, $companyDescription, $companyCreationDate)
+function updateCompany($companyId, $companyIdPublic, $companyTitle, $companyIllustration, $companyDescription, $companyCreationDate)
 {
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "UPDATE compagnies SET title = :title, illustration = :illustration, description = :description, creation_date = :creation_date WHERE id = :id"
+        "UPDATE compagnies SET title = :title, id_public = :id_public, illustration = :illustration, description = :description, creation_date = :creation_date WHERE id = :id"
     );
 
     $statement->bindParam(':id', $companyId, PDO::PARAM_INT);
     $statement->bindParam(':title', $companyTitle, PDO::PARAM_STR);
+    $statement->bindParam(':id_public', $companyIdPublic, PDO::PARAM_STR);
     $statement->bindParam(':illustration', $companyIllustration, PDO::PARAM_STR);
     $statement->bindParam(':description', $companyDescription, PDO::PARAM_STR);
     $statement->bindParam(':creation_date', $companyCreationDate, PDO::PARAM_STR);

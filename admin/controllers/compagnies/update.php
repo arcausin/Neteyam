@@ -7,12 +7,20 @@ if (countCompany($companyIdPublic)) {
 
     if (isset($_POST['updateCompanySubmit'])) {
         $companyTitle = validationInput($_POST['companyTitle']);
+        $companySlug = slugify($_POST['companySlug']);
+        $companySlug = validationInput($companySlug);
         $companyDescription = validationInput($_POST['companyDescription']);
         $companyCreationDate = validationInput($_POST['companyCreationDate']);
 
         if (empty($companyTitle)) {
             $message = "Veuillez ajouter un titre à l'entreprise";
             $companyUpdated = false;
+        } elseif (empty($companySlug)) {
+            $message = "Veuillez ajouter un slug à l'entreprise";
+            $companyCreated = false;
+        } elseif (countCompany($companySlug) != 0) {
+            $message = "Le slug existe déjà";
+            $companyCreated = false;
         } elseif (empty($companyDescription)) {
             $message = "Veuillez ajouter une description à l'entreprise";
             $companyUpdated = false;
@@ -32,7 +40,7 @@ if (countCompany($companyIdPublic)) {
                         $companyIllustration = makeIdPublic() . $extension;
                         move_uploaded_file($_FILES['companyIllustration']['tmp_name'], $folder . $companyIllustration);
             
-                        if (updateCompany($company['id'], $companyTitle, $companyIllustration, $companyDescription, $companyCreationDate)) {
+                        if (updateCompany($company['id'], $companySlug, $companyTitle, $companyIllustration, $companyDescription, $companyCreationDate)) {
                             unlink($_SERVER['DOCUMENT_ROOT']."/public/img/compagnies/".$company['illustration']);
                             $companyUpdated = true;
                             header('Location: /administration/entreprises');
@@ -47,7 +55,7 @@ if (countCompany($companyIdPublic)) {
                     $companyUpdated = false;
                 }
             } else {
-                if (updateCompany($company['id'], $companyTitle, $company['illustration'], $companyDescription, $companyCreationDate)) {
+                if (updateCompany($company['id'], $companySlug, $companyTitle, $company['illustration'], $companyDescription, $companyCreationDate)) {
                     $companyUpdated = true;
                     header('Location: /administration/entreprises');
                     exit();
