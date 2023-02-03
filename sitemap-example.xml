@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://{url-website}/</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/jeux</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/actualites</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/tests</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/guides</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/dossiers</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/contact</loc>
+  </url>
+  
+
+
+  <url>
+    <loc>https://{url-website}/jeux/{slug-game}</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/jeux/{slug-game}/extensions</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/jeux/{slug-game}/actualites</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/jeux/{slug-game}/tests</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/jeux/{slug-game}/guides</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/jeux/{slug-game}/dossiers</loc>
+  </url>
+
+
+
+  <url>
+    <loc>https://{url-website}/actualites/{slug-article}</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/tests/{slug-article}</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/guides/{slug-article}</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/dossiers/{slug-article}</loc>
+  </url>
+
+
+
+  <url>
+    <loc>https://{url-website}/entreprises</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/entreprises/{slug-entreprises}</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/entreprises/{slug-entreprises}/developpement</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/entreprises/{slug-entreprises}/edition</loc>
+  </url>
+
+
+
+  <url>
+    <loc>https://{url-website}/consoles</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/consoles/{slug-consoles}</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/consoles/{slug-consoles}/jeux</loc>
+  </url>
+  
+
+
+  <url>
+    <loc>https://{url-website}/genres</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/genres/{slug-genres}/jeux</loc>
+  </url>
+  
+
+
+  <url>
+    <loc>https://{url-website}/themes</loc>
+  </url>
+  <url>
+    <loc>https://{url-website}/themes/{slug-themes}/jeux</loc>
+  </url>
+</urlset>
