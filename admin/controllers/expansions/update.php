@@ -7,12 +7,20 @@ if (countExpansion($expansionIdPublic)) {
 
     if (isset($_POST['updateExpansionSubmit'])) {
         $expansionTitle = validationInput($_POST['expansionTitle']);
+        $expansionSlug = slugify($_POST['expansionSlug']);
+        $expansionSlug = validationInput($expansionSlug);
         $expansionDescription = validationInput($_POST['expansionDescription']);
         $expansionReleaseDate = validationInput($_POST['expansionReleaseDate']);
 
         if (empty($expansionTitle)) {
             $message = "Veuillez ajouter un titre à l'extension";
             $expansionUpdated = false;
+        } elseif (empty($expansionSlug)) {
+            $message = "Veuillez ajouter un slug à l'extension";
+            $expansionCreated = false;
+        } elseif (countExpansion($expansionSlug) != 0) {
+            $message = "Ce slug est déjà utilisé";
+            $expansionCreated = false;
         } elseif (empty($expansionDescription)) {
             $message = "Veuillez ajouter une description à l'extension";
             $expansionUpdated = false;
@@ -32,7 +40,7 @@ if (countExpansion($expansionIdPublic)) {
                         $expansionIllustration = makeIdPublic() . $extension;
                         move_uploaded_file($_FILES['expansionIllustration']['tmp_name'], $folder . $expansionIllustration);
             
-                        if (updateExpansion($expansion['id'], $expansionTitle, $expansionIllustration, $expansionDescription, $expansionReleaseDate)) {
+                        if (updateExpansion($expansion['id'], $expansionSlug, $expansionTitle, $expansionIllustration, $expansionDescription, $expansionReleaseDate)) {
                             unlink($_SERVER['DOCUMENT_ROOT']."/public/img/expansions/".$expansion['illustration']);
                             $expansionUpdated = true;
                             header('Location: /administration/extensions');
@@ -47,7 +55,7 @@ if (countExpansion($expansionIdPublic)) {
                     $expansionUpdated = false;
                 }
             } else {
-                if (updateExpansion($expansion['id'], $expansionTitle, $expansion['illustration'], $expansionDescription, $expansionReleaseDate)) {
+                if (updateExpansion($expansion['id'], $expansionSlug, $expansionTitle, $expansion['illustration'], $expansionDescription, $expansionReleaseDate)) {
                     $expansionUpdated = true;
                     header('Location: /administration/extensions');
                     exit();

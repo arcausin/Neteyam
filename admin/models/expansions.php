@@ -37,15 +37,16 @@ function getExpansion($expansionIdPublic)
     return $expansion;
 }
 
-function countExpansion($expansionIdPublic)
+function countExpansion($expansionIdPublic, $expansionId = 0)
 {
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT COUNT(id_public) FROM expansions WHERE id_public = :id_public"
+        "SELECT COUNT(id) FROM expansions WHERE id_public = :id_public AND id != :id"
     );
 
     $statement->bindParam(':id_public', $expansionIdPublic, PDO::PARAM_STR);
+    $statement->bindParam(':id', $expansionId, PDO::PARAM_INT);
 
     $statement->execute();
 
@@ -75,16 +76,17 @@ function addExpansion($expansionIdPublic, $expansionTitle, $expansionIllustratio
     return $statement->rowCount();
 }
 
-function updateExpansion($expansionId, $expansionTitle, $expansionIllustration, $expansionDescription, $expansionReleaseDate)
+function updateExpansion($expansionId, $expansionIdPublic, $expansionTitle, $expansionIllustration, $expansionDescription, $expansionReleaseDate)
 {
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "UPDATE expansions SET title = :title, illustration = :illustration, description = :description, release_date = :release_date WHERE id = :id"
+        "UPDATE expansions SET title = :title, id_public = :id_public, illustration = :illustration, description = :description, release_date = :release_date WHERE id = :id"
     );
 
     $statement->bindParam(':id', $expansionId, PDO::PARAM_INT);
     $statement->bindParam(':title', $expansionTitle, PDO::PARAM_STR);
+    $statement->bindParam(':id_public', $expansionIdPublic, PDO::PARAM_STR);
     $statement->bindParam(':illustration', $expansionIllustration, PDO::PARAM_STR);
     $statement->bindParam(':description', $expansionDescription, PDO::PARAM_STR);
     $statement->bindParam(':release_date', $expansionReleaseDate, PDO::PARAM_STR);

@@ -4,11 +4,19 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/admin/functions.php');
 
 if (isset($_POST['createExpansionSubmit'])) {
     $expansionTitle = validationInput($_POST['expansionTitle']);
+    $expansionSlug = slugify($_POST['expansionSlug']);
+    $expansionSlug = validationInput($expansionSlug);
     $expansionDescription = validationInput($_POST['expansionDescription']);
     $expansionReleaseDate = validationInput($_POST['expansionReleaseDate']);
 
     if (empty($expansionTitle)) {
         $message = "Veuillez ajouter un titre à l'extension";
+        $expansionCreated = false;
+    } elseif (empty($expansionSlug)) {
+        $message = "Veuillez ajouter un slug à l'extension";
+        $expansionCreated = false;
+    } elseif (countExpansion($expansionSlug) != 0) {
+        $message = "Ce slug est déjà utilisé";
         $expansionCreated = false;
     } elseif (empty($expansionDescription)) {
         $message = "Veuillez ajouter une description à l'extension";
@@ -31,7 +39,7 @@ if (isset($_POST['createExpansionSubmit'])) {
                 $expansionIllustration = makeIdPublic() . $extension;
                 move_uploaded_file($_FILES['expansionIllustration']['tmp_name'], $folder . $expansionIllustration);
 
-                $expansionIdPublic = makeIdPublic();
+                $expansionIdPublic = $expansionSlug;
 
                 if (addExpansion($expansionIdPublic, $expansionTitle, $expansionIllustration, $expansionDescription, $expansionReleaseDate)) {
                     $expansionCreated = true;
