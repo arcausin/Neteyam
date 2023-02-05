@@ -98,9 +98,25 @@
             text-overflow: ellipsis;
         }
     </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let windowHeight = window.innerHeight;
+
+            let headerHeight = document.querySelector("#header-content").offsetHeight;
+
+            let footerHeight = document.querySelector("#footer-content").offsetHeight;
+
+            let bodyHeight = windowHeight - footerHeight;
+
+            // Ajouter la hauteur de la barre de navigation au "padding-top" du conteneur de contenu
+            document.querySelector("#main-content").style.paddingTop = headerHeight + "px";
+            document.querySelector("#main-content").style.minHeight = bodyHeight + "px";
+        });
+    </script>
 </head>
 <body class="bg-dark text-white">
-    <header class="shadow-top">
+    <header class="shadow-top bg-dark fixed-top" id="header-content">
         <div class="container">
             <nav class="navbar navbar-dark navbar-expand-md">
                 <a class="navbar-brand fs-4 animate-opacity" href="/">Neteyam.com</a>
@@ -144,11 +160,11 @@
         </div>
     </header>
 
-    <main class="container" style="min-height: 60vh;">
+    <main class="container" style="min-height: 60vh; padding-top: 62px" id="main-content">
         <?= $content; ?>
     </main>
     
-    <footer class="shadow-bottom">
+    <footer class="shadow-bottom" id="footer-content">
         <div class="container">
             <div class="text-center py-3">
                 <p class="mb-3">NOUS SUIVRE</p>
