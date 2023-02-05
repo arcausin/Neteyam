@@ -3,7 +3,7 @@ RewriteEngine On
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP:X-Forwarded-SSL} !on [OR]
 RewriteCond %{HTTP_HOST} !^www.neteyam.com$
-RewriteRule ^/?$ "https\:\/\/neteyam\.com\/" [R=301,L, NE]
+RewriteRule ^/?$ "https\:\/\/neteyam\.com\/" [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
