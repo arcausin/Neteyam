@@ -64,7 +64,7 @@ if (isset($_POST['contactSubmit'])) {
         $headers[] = 'Content-Type: text/html; charset=utf-8';
         $headers[] = 'From: Neteyam.com <contact@neteyam.com>';
 
-        if (mail("contact@neteyam.com, arcausin@neteyam.com, arcausin@gmail.com", $subjectFrom, $messageFrom, implode("\r\n", $headers))) {
+        if (mail("contact@neteyam.com", $subjectFrom, $messageFrom, implode("\r\n", $headers))) {
             if (mail($mailAdressContact, $subjectTo, $messageTo, implode("\r\n", $headers))) {
                 if (addMailForm($mailAdressContact, $subjectContact, $messageContact)) {
                     $mailSended = true;
