@@ -7,15 +7,19 @@ if (isset($_GET['url'])) {
     $url = explode('/', $_GET['url']);
 }
 
-if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] != "on") {
-    header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
-    exit();
-}
-
 $host = $_SERVER['HTTP_HOST'];
 
-if (strpos($host, 'www') === 0) {
-    $host = substr($host, 4);
+if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === 'off') {
+    $location = 'https://' . $host . $_SERVER['REQUEST_URI'];
+    header('Location: ' . $location);
+    exit;
+}
+
+if (substr($host, 0, 4) === 'www.') {
+    $no_www_host = substr($host, 4);
+    $location = 'https://' . $no_www_host . $_SERVER['REQUEST_URI'];
+    header('Location: ' . $location);
+    exit;
 }
 
 $urlNative = "https://" . $host;
