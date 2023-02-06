@@ -1,4 +1,4 @@
-<?php $title = "Supprimer l'extension " . $expansion['title'] . " - Neteyam.com"; ?>
+<?php $title = "Supprimer l'extension " . $expansion['title'] . " - " . ucfirst($host); ?>
 
 <?php ob_start(); ?>
 <div class="row">

@@ -1,4 +1,4 @@
-<?php $title = $expansion['title'] . " - Neteyam.com"; ?>
+<?php $title = $expansion['title'] . " - " . ucfirst($host); ?>
 
 <?php ob_start(); ?>
 <div class="row">

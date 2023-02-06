@@ -1,6 +1,6 @@
-<?php $title = "Entreprises - Neteyam.com"; ?>
+<?php $title = "Entreprises - " . ucfirst($host); ?>
 
-<?php $description = "Retrouvez toutes les entreprises référencées sur Neteyam.com"; ?>
+<?php $description = "Retrouvez toutes les entreprises référencées sur " . ucfirst($host); ?>
 
 <?php $image = $urlNative . "/public/img/logo.png"; ?>
 

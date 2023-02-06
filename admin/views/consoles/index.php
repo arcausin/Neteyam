@@ -1,4 +1,4 @@
-<?php $title = "Consoles - Neteyam.com"; ?>
+<?php $title = "Consoles - " . ucfirst($host); ?>
 
 <?php ob_start(); ?>
 <div class="d-flex align-items-center justify-content-between mb-4">
@@ -8,7 +8,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Liste des consoles référencées sur Neteyam.com</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Liste des consoles référencées sur <?= ucfirst($host); ?></h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">

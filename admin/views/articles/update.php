@@ -1,4 +1,4 @@
-<?php $title = "Modifier l'article " . $article['title'] . " - Neteyam.com"; ?>
+<?php $title = "Modifier l'article " . $article['title'] . " - " . ucfirst($host); ?>
 
 <?php ob_start(); ?>
 <div class="row">

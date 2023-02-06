@@ -34,28 +34,28 @@ if (isset($_POST['contactSubmit'])) {
                 Voici le message que nous avons reçu de votre part : <br/> <br/>
                 Sujet : <?= $subjectContact; ?> <br/>
                 Message : <?= $messageContact; ?></p>
-                <p><i>Si vous n'êtes pas à l'origine de cette activité, veuillez <a href="https://neteyam.com/contact">nous contacter</a>.</i></p>
+                <p><i>Si vous n'êtes pas à l'origine de cette activité, veuillez <a href="<?= $urlNative; ?>/contact">nous contacter</a>.</i></p>
                 <p>Cordialement</p>
-                <p><a href="https://neteyam.com">Neteyam.com</a></p>
+                <p><a href="<?= $urlNative; ?>"><?= ucfirst($host); ?></a></p>
             </body>
         </html>
         <?php $messageTo = ob_get_clean();
 
-        $subjectFrom = "Nouveau message de contact - Neteyam.com";
+        $subjectFrom = "Nouveau message de contact - " . ucfirst($host);
         
         ob_start(); ?>
         <html>
             <head>
-            <title>Nouveau message de contact - Neteyam.com</title>
+            <title>Nouveau message de contact - <?= ucfirst($host); ?></title>
             </head>
             <body>
-                <h1>Nouveau message de contact - Neteyam.com</h1>
+                <h1>Nouveau message de contact - <?= ucfirst($host); ?></h1>
                 <p>Bonjour, <br/><br/>
                 Voici le message que vous avez reçu de la part de <?= $mailAdressContact; ?> : <br/> <br/>
                 Sujet : <?= $subjectContact; ?> <br/>
                 Message : <?= $messageContact; ?></p>
                 <p>Cordialement</p>
-                <p><a href="https://neteyam.com">Neteyam.com</a></p>
+                <p><a href="<?= $urlNative; ?>"><?= ucfirst($host); ?></a></p>
             </body>
         </html>
         <?php $messageFrom = ob_get_clean();

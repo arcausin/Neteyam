@@ -1,4 +1,4 @@
-<?php $title = $game['title'] . " - Neteyam.com"; ?>
+<?php $title = $game['title'] . " - " . ucfirst($host); ?>
 
 <?php ob_start(); ?>
 <div class="row">
@@ -18,7 +18,3 @@
 <?php $content = ob_get_clean(); ?>
 
 <?php require_once($_SERVER['DOCUMENT_ROOT'].'/admin/views/layout.php'); ?>
-
-
-
-

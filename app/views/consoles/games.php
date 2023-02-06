@@ -1,6 +1,6 @@
-<?php $title = "Jeux - " . $console['name'] . " - Neteyam.com"; ?>
+<?php $title = "Jeux - " . $console['name'] . " - " . ucfirst($host); ?>
 
-<?php $description = "Retrouvez tous les jeux sur " . $console['name'] . " référencés sur Neteyam.com"; ?>
+<?php $description = "Retrouvez tous les jeux sur " . $console['name'] . " référencés sur " . ucfirst($host); ?>
 
 <?php $image = $urlNative . "/public/img/logo.png"; ?>
 

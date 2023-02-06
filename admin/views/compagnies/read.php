@@ -1,4 +1,4 @@
-<?php $title = $company['title'] . " - Neteyam.com"; ?>
+<?php $title = $company['title'] . " - " . ucfirst($host); ?>
 
 <?php ob_start(); ?>
 <div class="row">

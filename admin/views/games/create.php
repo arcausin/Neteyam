@@ -1,4 +1,4 @@
-<?php $title = "Ajouter un jeu - Neteyam.com"; ?>
+<?php $title = "Ajouter un jeu - " . ucfirst($host); ?>
 
 <?php ob_start(); ?>
 <div class="row">
@@ -21,7 +21,7 @@
 
         <h1 class="h3 mb-2 text-gray-800">Ajouter un jeu</h1>
 
-        <p class="mb-2">Formulaire d'ajout de jeu sur Neteyam.com</p>
+        <p class="mb-2">Formulaire d'ajout de jeu sur <?= ucfirst($host); ?></p>
 
         <form class="border p-4 mb-4" action="" method="post" enctype="multipart/form-data">
             <div class="form-group">

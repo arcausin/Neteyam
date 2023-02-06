@@ -1,4 +1,4 @@
-<?php $title = "404 - Neteyam.com"; ?>
+<?php $title = "404 - " . ucfirst($host); ?>
 
 <?php $description = "Il semble que vous ayez trouvé un bug dans la matrice..."; ?>
 

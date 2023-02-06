@@ -1,4 +1,4 @@
-<?php $title = "Supprimer le jeu " . $game['title'] . " - Neteyam.com"; ?>
+<?php $title = "Supprimer le jeu " . $game['title'] . " - " . ucfirst($host); ?>
 
 <?php ob_start(); ?>
 <div class="row">

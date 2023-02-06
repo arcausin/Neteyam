@@ -119,7 +119,7 @@
     <header class="shadow-top bg-dark fixed-top" id="header-content">
         <div class="container">
             <nav class="navbar navbar-dark navbar-expand-md">
-                <a class="navbar-brand fs-4 animate-opacity" href="/">Neteyam.com</a>
+                <a class="navbar-brand fs-4 animate-opacity" href="/"><?= ucfirst($host); ?></a>
                 <?php if (!empty($_SESSION['user'])) { ?>
                     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/administration">
                         <div class="sidebar-brand-icon rotate-n-15">
@@ -174,7 +174,7 @@
                 <hr>
 
                 <p><a class="text-white animate-opacity" href="#">L'equipe</a> | <a class="text-white animate-opacity" href="#">Mentions Légales</a> | <a class="text-white animate-opacity" href="#">Politique de confidentialité</a> | <a class="text-white animate-opacity" href="/contact">Contact</a></p>
-                <p class="fs-4"><a class="text-decoration-none text-white animate-opacity" href="/">Neteyam.com</a></p>
+                <p class="fs-4"><a class="text-decoration-none text-white animate-opacity" href="/"><?= ucfirst($host); ?></a></p>
             </div>
         </div>
     </footer>

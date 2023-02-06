@@ -41,7 +41,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/config/apiKeys.php');
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                <a class="text-white" href="/">Neteyam.com</a>
+                <a class="text-white" href="/"><?= ucfirst($host); ?></a>
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->

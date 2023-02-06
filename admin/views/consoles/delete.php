@@ -1,4 +1,4 @@
-<?php $title = "Supprimer la console " . $console['name'] . " - Neteyam.com"; ?>
+<?php $title = "Supprimer la console " . $console['name'] . " - " . ucfirst($host); ?>
 
 <?php ob_start(); ?>
 <div class="row">

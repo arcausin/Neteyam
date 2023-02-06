@@ -1,4 +1,4 @@
-<?php $title = $article['title'] . " - Neteyam.com"; ?>
+<?php $title = $article['title'] . " - " . ucfirst($host); ?>
 
 <?php $description = printDescription(PrintContentsArticle($article['subtitle'])); ?>
 

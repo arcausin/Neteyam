@@ -1,6 +1,6 @@
-<?php $title = $company['title'] . " - Neteyam.com"; ?>
+<?php $title = $company['title'] . " - " . ucfirst($host); ?>
 
-<?php $description = "Retrouvez tous les contenus de l'entreprise " . $company['title'] . " référencés sur Neteyam.com"; ?>
+<?php $description = "Retrouvez tous les contenus de l'entreprise " . $company['title'] . " référencés sur " . ucfirst($host); ?>
 
 <?php $image = $urlNative . "/public/img/games/" . $company['illustration']; ?>
 

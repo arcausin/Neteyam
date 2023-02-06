@@ -1,6 +1,6 @@
-<?php $title = "Thèmes - Neteyam.com"; ?>
+<?php $title = "Thèmes - " . ucfirst($host); ?>
 
-<?php $description = "Retrouvez tous les thèmes référencés sur Neteyam.com"; ?>
+<?php $description = "Retrouvez tous les thèmes référencés sur " . ucfirst($host); ?>
 
 <?php $image = $urlNative . "/public/img/logo.png"; ?>
 

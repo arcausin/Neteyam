@@ -1,6 +1,6 @@
-<?php $title = "Contact - Neteyam.com"; ?>
+<?php $title = "Contact - " . ucfirst($host); ?>
 
-<?php $description = "Formulaire de contact du site Neteyam.com"; ?>
+<?php $description = "Formulaire de contact du site " . ucfirst($host); ?>
 
 <?php $image = $urlNative . "/public/img/logo.png"; ?>
 

@@ -1,6 +1,6 @@
-<?php $title = "Actualités - Neteyam.com"; ?>
+<?php $title = "Actualités - " . ucfirst($host); ?>
 
-<?php $description = "Retrouvez toutes les actualités de Neteyam.com"; ?>
+<?php $description = "Retrouvez toutes les actualités de " . ucfirst($host); ?>
 
 <?php $image = $urlNative . "/public/img/logo.png"; ?>
 

@@ -1,4 +1,4 @@
-<?php $title = "Supprimer l'entreprise " . $company['title'] . " - Neteyam.com"; ?>
+<?php $title = "Supprimer l'entreprise " . $company['title'] . " - " . ucfirst($host); ?>
 
 <?php ob_start(); ?>
 <div class="row">

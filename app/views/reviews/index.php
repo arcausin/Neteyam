@@ -1,6 +1,6 @@
-<?php $title = "Tests - Neteyam.com"; ?>
+<?php $title = "Tests - " . ucfirst($host); ?>
 
-<?php $description = "Retrouvez tous les tests de Neteyam.com"; ?>
+<?php $description = "Retrouvez tous les tests de " . ucfirst($host); ?>
 
 <?php $image = $urlNative . "/public/img/logo.png"; ?>
 

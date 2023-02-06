@@ -1,4 +1,4 @@
-<?php $title = $console['name'] . " - Neteyam.com"; ?>
+<?php $title = $console['name'] . " - " . ucfirst($host); ?>
 
 <?php ob_start(); ?>
 <div class="row">
