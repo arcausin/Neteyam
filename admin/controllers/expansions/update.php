@@ -18,7 +18,7 @@ if (countExpansion($expansionIdPublic)) {
         } elseif (empty($expansionSlug)) {
             $message = "Veuillez ajouter un slug à l'extension";
             $expansionCreated = false;
-        } elseif (countExpansion($expansionSlug) != 0) {
+        } elseif (countExpansion($expansionSlug, $expansion['id']) != 0) {
             $message = "Ce slug est déjà utilisé";
             $expansionCreated = false;
         } elseif (empty($expansionDescription)) {

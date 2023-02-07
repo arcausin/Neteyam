@@ -18,7 +18,7 @@ if (countCompany($companyIdPublic)) {
         } elseif (empty($companySlug)) {
             $message = "Veuillez ajouter un slug à l'entreprise";
             $companyCreated = false;
-        } elseif (countCompany($companySlug) != 0) {
+        } elseif (countCompany($companySlug, $company['id']) != 0) {
             $message = "Le slug existe déjà";
             $companyCreated = false;
         } elseif (empty($companyDescription)) {
