@@ -7,7 +7,7 @@ function getCompagnies()
     $database = dbConnect();
 
     $statement = $database->prepare(
-        "SELECT * FROM compagnies ORDER BY title ASC"
+        "SELECT * FROM compagnies ORDER BY LOWER(title) ASC"
     );
 
     $statement->execute();
