@@ -151,9 +151,9 @@
                         <li class="nav-item">
                             <a href="/dossiers" class="nav-link text-white animate-opacity">Dossiers</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                         <a href="/contact" class="nav-link text-white animate-opacity pe-0">Contact</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </nav>
@@ -173,7 +173,7 @@
         
                 <hr>
 
-                <p><a class="text-white animate-opacity" href="#">L'equipe</a> | <a class="text-white animate-opacity" href="#">Mentions Légales</a> | <a class="text-white animate-opacity" href="#">Politique de confidentialité</a> | <a class="text-white animate-opacity" href="/contact">Contact</a></p>
+                <p><!-- <a class="text-white animate-opacity" href="#">L'equipe</a> |  --><a class="text-white animate-opacity" href="/mentions-legales">Mentions légales</a> | <a class="text-white animate-opacity" href="politique-de-confidentialite">Politique de confidentialité</a> | <a class="text-white animate-opacity" href="/contact">Contact</a></p>
                 <p class="fs-4"><a class="text-decoration-none text-white animate-opacity" href="/"><?= ucfirst($host); ?></a></p>
             </div>
         </div>

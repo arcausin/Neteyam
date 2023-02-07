@@ -286,6 +286,12 @@ elseif (!empty($url[0])) {
     elseif ($url[0] == 'contact' && empty($url[1])) {
         require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/contact.php');
     }
+    elseif ($url[0] == 'mentions-legales' && empty($url[1])) {
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/legal-notice.php');
+    }
+    elseif ($url[0] == 'politique-de-confidentialite' && empty($url[1])) {
+        require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/privacy-policy.php');
+    }
     
     else {
         require_once($_SERVER['DOCUMENT_ROOT'].'/app/controllers/404.php');
