@@ -41,9 +41,7 @@ function showCompagniesSearch(str) {
     <div id="compagniesSearch"></div>
 
     <div class="row g-4 align-items-center mb-3" id="allCompagnies">
-        <?php
-        foreach ($compagnies as $company) {
-        ?>
+        <?php foreach ($compagnies as $company) { ?>
         <div class="col-6 col-md-3 col-lg-2">
             <div class="shadow rounded p-3 bg-light">
                 <a class="text-decoration-none text-white animate-opacity" href="/entreprises/<?= $company['id_public']; ?>">
@@ -51,9 +49,7 @@ function showCompagniesSearch(str) {
                 </a>
             </div>
         </div>
-        <?php
-        }
-        ?>
+        <?php } ?>
     </div>
 </div>
 <?php $content = ob_get_clean(); ?>

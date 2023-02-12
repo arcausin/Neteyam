@@ -41,9 +41,7 @@ function showGamesSearch(str) {
     <div id="gamesSearch"></div>
 
     <div class="row justify-content-center justify-content-md-start g-4 mb-3" id="allGames">
-        <?php
-        foreach ($games as $game) {
-        ?>
+        <?php foreach ($games as $game) { ?>
         <div class="col-6 col-md-3 col-lg-2">
             <div class="shadow rounded">
                 <a class="text-decoration-none text-white animate-opacity" href="/jeux/<?= $game['id_public']; ?>">
@@ -51,9 +49,7 @@ function showGamesSearch(str) {
                 </a>
             </div>
         </div>
-        <?php
-        }
-        ?>
+        <?php } ?>
     </div>
 </div>
 <?php $content = ob_get_clean(); ?>

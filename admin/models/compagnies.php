@@ -44,7 +44,7 @@ function getGamesByDeveloper($companyIdPublic)
     $statement = $database->prepare(
         "SELECT games.* FROM games
         INNER JOIN games_developers ON games.id = games_developers.id_game
-        INNER JOIN Compagnies ON games_developers.id_company = compagnies.id
+        INNER JOIN compagnies ON games_developers.id_company = compagnies.id
         WHERE compagnies.id_public = :id_public ORDER BY games.release_date DESC"
     );
 
