@@ -114,6 +114,16 @@
             document.querySelector("#main-content").style.minHeight = bodyHeight + "px";
         });
     </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-46Z10V003F"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-46Z10V003F');
+    </script>
 </head>
 <body class="bg-dark text-white">
     <header class="shadow-top bg-dark fixed-top" id="header-content">
