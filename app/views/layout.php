@@ -143,11 +143,11 @@
 
                 <div class="collapse navbar-collapse" id="navbarMenu">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="/" class="nav-link text-white animate-opacity ps-0">Accueil</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
-                            <a href="/jeux" class="nav-link text-white animate-opacity">Jeux</a>
+                            <a href="/jeux" class="nav-link text-white animate-opacity ps-0">Jeux</a>
                         </li>
                         <li class="nav-item">
                             <a href="/actualites" class="nav-link text-white animate-opacity">Actualités</a>
@@ -159,7 +159,7 @@
                             <a href="/guides" class="nav-link text-white animate-opacity">Guides</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/dossiers" class="nav-link text-white animate-opacity">Dossiers</a>
+                            <a href="/dossiers" class="nav-link text-white animate-opacity pe-0">Dossiers</a>
                         </li>
                         <!-- <li class="nav-item">
                         <a href="/contact" class="nav-link text-white animate-opacity pe-0">Contact</a>
