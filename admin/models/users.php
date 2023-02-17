@@ -92,6 +92,21 @@ function countUser($userIdPublic)
     return $statement->fetchColumn();
 }
 
+function countUsers()
+{
+    $database = dbConnect();
+
+    $statement = $database->prepare(
+        "SELECT COUNT(id) FROM users"
+    );
+
+    $statement->execute();
+
+    $database = null;
+
+    return $statement->fetchColumn();
+}
+
 function countUserPseudonym($userPseudonym)
 {
     $database = dbConnect();

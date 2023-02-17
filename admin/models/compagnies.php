@@ -101,6 +101,23 @@ function countCompany($companyIdPublic, $companyId = 0)
     return $count;
 }
 
+function countCompagnies()
+{
+    $database = dbConnect();
+
+    $statement = $database->prepare(
+        "SELECT COUNT(id) FROM compagnies"
+    );
+
+    $statement->execute();
+
+    $count = $statement->fetchColumn();
+
+    $database = null;
+
+    return $count;
+}
+
 function addCompany($companyIdPublic, $companyTitle, $companyIllustration, $companyDescription, $companyCreationDate)
 {
     $database = dbConnect();

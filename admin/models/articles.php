@@ -242,6 +242,23 @@ function countArticle($articleIdPublic, $articleId = 0)
     return $count;
 }
 
+function countArticles()
+{
+    $database = dbConnect();
+
+    $statement = $database->prepare(
+        "SELECT COUNT(id) FROM articles"
+    );
+
+    $statement->execute();
+
+    $count = $statement->fetchColumn();
+
+    $database = null;
+
+    return $count;
+}
+
 function addArticle($articleIdPublic, $authorId, $categoryId, $articleTitle, $articleIllustration, $articleSubtitle, $articleContents)
 {
     $database = dbConnect();

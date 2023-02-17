@@ -137,6 +137,23 @@ function countGame($gameIdPublic, $gameId = 0)
     return $count;
 }
 
+function countGames()
+{
+    $database = dbConnect();
+
+    $statement = $database->prepare(
+        "SELECT COUNT(id) FROM games"
+    );
+
+    $statement->execute();
+
+    $count = $statement->fetchColumn();
+
+    $database = null;
+
+    return $count;
+}
+
 function getConsoles()
 {
     $database = dbConnect();
