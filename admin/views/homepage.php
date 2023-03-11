@@ -85,7 +85,7 @@
     $events = [];
     foreach ($games as $game) {
         $events[] = [
-            'title' => $game['title'],
+            'title' => htmlspecialchars_decode($game['title']),
             'start' => $game['release_date'],
             'url' => '/administration/jeux/' . $game['id_public']
         ];
