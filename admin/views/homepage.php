@@ -104,13 +104,14 @@
                     center: 'title',
                     right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
                 },
+                themeSystem: 'bootstrap',
                 events: <?= json_encode($events) ?>,
             });
             calendar.render();
         });
     </script>
 
-    <div class="offset-2 col-8">
+    <div class="col-12 offset-lg-2 col-lg-8 mb-3">
         <div id='calendar'></div>
     </div>
 </div>
