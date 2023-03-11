@@ -20,6 +20,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/config/apiKeys.php');
     <?php require_once($_SERVER['DOCUMENT_ROOT'].'/admin/include/css.php'); ?>
 
     <script src="https://cdn.tiny.cloud/1/<?= $keyTinyMCE; ?>/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="/vendor/fullcalendar/dist/index.global.min.js"></script>
 </head>
 <body id="page-top" class="sidebar-toggled">
 

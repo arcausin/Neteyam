@@ -80,6 +80,39 @@
             </div>
         </div>
     </div>
+
+    <?php
+    $events = [];
+    foreach ($games as $game) {
+        $events[] = [
+            'title' => $game['title'],
+            'start' => $game['release_date'],
+            'url' => '/administration/jeux/' . $game['id_public']
+        ];
+    }
+    ?>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'fr',
+                firstDay: 1,
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+                },
+                events: <?= json_encode($events) ?>,
+            });
+            calendar.render();
+        });
+    </script>
+
+    <div class="offset-2 col-8">
+        <div id='calendar'></div>
+    </div>
 </div>
 <?php $content = ob_get_clean(); ?>
 
